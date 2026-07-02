@@ -2,8 +2,9 @@
 
 import React, { useState, useEffect } from "react";
 import { useMutation, useQuery } from "@tanstack/react-query";
-import { applyForJob, fetchJobById, type ApplyPayload } from "@/lib/careersApi";
-
+import { toast } from "sonner";
+import { applyForJob, fetchJobById } from "@/lib/api/careers";
+import type { ApplyPayload } from "@/lib/api/types";
 export interface JobApplyModalProps {
   isOpen: boolean;
   onClose: () => void;
@@ -28,6 +29,9 @@ export default function JobApplyModal({
   const [errors, setErrors] = useState<Record<string, boolean>>({});
   const [mounted, setMounted] = useState(false);
   const [visible, setVisible] = useState(false);
+  // Max file size: 5MB (5 * 1024 * 1024 bytes)
+  const MAX_FILE_SIZE = 5 * 1024 * 1024;
+  const [fileSizeError, setFileSizeError] = useState(false);
 
   const { data: jobData, isLoading: isJobLoading } = useQuery({
     queryKey: ["job", jobId],
@@ -71,15 +75,26 @@ export default function JobApplyModal({
       fullName: !formData.fullName,
       phone: !formData.phone,
       email: !formData.email,
-      cv: !formData.cv,
+      cv: !formData.cv || fileSizeError,
     };
     setErrors(newErrors);
     if (Object.values(newErrors).some(Boolean)) return;
     mutate(formData);
   };
 
-  const handleInputChange = (field: string, value: string | File | null) => {
-    setFormData((prev) => ({ ...prev, [field]: value }));
+  const handleInputChange = (
+    field: keyof ApplyPayload,
+    value: string | File | null,
+  ) => {
+    if (field === "cv" && value instanceof File) {
+      if (value.size > MAX_FILE_SIZE) {
+        setFileSizeError(true);
+        toast.error("File is too large! Max size is 5MB.");
+        return;
+      }
+      setFileSizeError(false);
+    }
+    setFormData((prev: ApplyPayload) => ({ ...prev, [field]: value }));
     if (errors[field]) setErrors((prev) => ({ ...prev, [field]: false }));
   };
 
@@ -264,7 +279,7 @@ export default function JobApplyModal({
                       className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
                     />
                     <div
-                      className={`flex items-center justify-between w-full border rounded-lg py-3.5 px-4 bg-white text-[14px] group-hover:border-[#3E4095] transition-all ${errors.cv ? "border-[#E11D48]" : "border-gray-200"}`}
+                      className={`flex items-center justify-between w-full border rounded-lg py-3.5 px-4 bg-white text-[14px] group-hover:border-brand-primary transition-all ${errors.cv ? "border-[#E11D48]" : "border-gray-200"}`}
                     >
                       <span className="font-bold text-gray-700">
                         {formData.cv ? formData.cv.name : "Choose file"}

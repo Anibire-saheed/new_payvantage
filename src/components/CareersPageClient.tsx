@@ -7,7 +7,7 @@
 // import { openCVModal, closeCVModal, setDepartment } from "@/store/careersSlice";
 // import CVModal from "@/components/CVModal";
 // import ScrollReveal from "@/components/ScrollReveal";
-// import { fetchJobs, type Job } from "@/lib/careersApi";
+// import { fetchJobs, type Job } from "@/lib/api/careers";
 
 // export type { Job };
 
@@ -191,7 +191,8 @@ import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { openCVModal, closeCVModal, setDepartment } from "@/store/careersSlice";
 import CVModal from "@/components/CVModal";
 import ScrollReveal from "@/components/ScrollReveal";
-import { fetchJobs, type Job } from "@/lib/careersApi";
+import { fetchJobs } from "@/lib/api/careers";
+import type { Job } from "@/lib/api/types";
 import { useState } from "react";
 
 export type { Job };

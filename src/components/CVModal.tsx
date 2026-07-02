@@ -805,11 +805,8 @@ import React, { useState, useEffect, useCallback } from "react";
 import { createPortal } from "react-dom";
 import { useQuery, useMutation } from "@tanstack/react-query";
 import { toast } from "sonner";
-import {
-  allDepartments,
-  submitApplication,
-  Department,
-} from "@/lib/talentPoolApi";
+import { allDepartments, submitApplication } from "@/lib/api/talentPool";
+import type { Department } from "@/lib/api/types";
 
 interface CVModalProps {
   isOpen: boolean;
@@ -857,6 +854,10 @@ function DropdownPortal({
 }
 
 export default function CVModal({ isOpen, onClose }: CVModalProps) {
+  // Max file size: 500KB (5 * 1024 bytes)
+  const MAX_FILE_SIZE = 500 * 1024;
+
+  const [fileSizeError, setFileSizeError] = useState(false);
   const [mounted, setMounted] = useState(false);
   const [visible, setVisible] = useState(false);
   const [roles, setRoles] = useState<{ id: string; title: string }[]>([]);
@@ -963,6 +964,14 @@ export default function CVModal({ isOpen, onClose }: CVModalProps) {
 
   // ─── Handle input change ──────────────────────────
   const handleInputChange = (field: string, value: string | File | null) => {
+    if (field === "cv" && value instanceof File) {
+      if (value.size > MAX_FILE_SIZE) {
+        setFileSizeError(true);
+        toast.error("File is too large! Max size is 5MB.");
+        return;
+      }
+      setFileSizeError(false);
+    }
     setFormData((prev) => ({ ...prev, [field]: value }));
     if (errors[field]) setErrors((prev) => ({ ...prev, [field]: false }));
   };
@@ -979,7 +988,7 @@ export default function CVModal({ isOpen, onClose }: CVModalProps) {
       department: !formData.department,
       phone: !formData.phone || !isValidPhone(formData.phone),
       email: !formData.email || !isValidEmail(formData.email),
-      cv: !formData.cv,
+      cv: !formData.cv || fileSizeError,
     };
     setErrors(newErrors);
     if (Object.values(newErrors).some(Boolean)) return;

@@ -3,7 +3,9 @@
 import React, { useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { useMutation, useQuery } from "@tanstack/react-query";
-import { applyForJob, fetchJobById, type ApplyPayload } from "@/lib/careersApi";
+import { toast } from "sonner";
+import { applyForJob, fetchJobById } from "@/lib/api/careers";
+import type { ApplyPayload } from "@/lib/api/types";
 
 type FormData = ApplyPayload;
 
@@ -19,6 +21,9 @@ export default function ApplyPage() {
     cv: null,
   });
   const [errors, setErrors] = useState<Record<string, boolean>>({});
+  // Max file size: 5MB (5 * 1024 * 1024 bytes)
+  const MAX_FILE_SIZE = 5 * 1024 * 1024;
+  const [fileSizeError, setFileSizeError] = useState(false);
 
   const { data: jobData, isLoading: isJobLoading } = useQuery({
     queryKey: ["job", jobId],
@@ -41,15 +46,26 @@ export default function ApplyPage() {
       fullName: !formData.fullName,
       phone: !formData.phone,
       email: !formData.email,
-      cv: !formData.cv,
+      cv: !formData.cv || fileSizeError,
     };
     setErrors(newErrors);
     if (Object.values(newErrors).some(Boolean)) return;
     mutate(formData);
   };
 
-  const handleInputChange = (field: string, value: string | File | null) => {
-    setFormData((prev) => ({ ...prev, [field]: value }));
+  const handleInputChange = (
+    field: keyof ApplyPayload,
+    value: string | File | null,
+  ) => {
+    if (field === "cv" && value instanceof File) {
+      if (value.size > MAX_FILE_SIZE) {
+        setFileSizeError(true);
+        toast.error("File is too large! Max size is 5MB.");
+        return;
+      }
+      setFileSizeError(false);
+    }
+    setFormData((prev: ApplyPayload) => ({ ...prev, [field]: value }));
     if (errors[field]) setErrors((prev) => ({ ...prev, [field]: false }));
   };
 
