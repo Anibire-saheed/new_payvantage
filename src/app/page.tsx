@@ -1,9 +1,9 @@
-import Hero from "@/components/Hero";
-import Stats from "@/components/Stats";
-import FeatureUSSD from "@/components/FeatureUSSD";
-import Partners from "@/components/Partners";
-import FeatureAPI from "@/components/FeatureAPI";
-import CTA from "@/components/CTA";
+import Hero from "@/components/home/Hero";
+import Stats from "@/components/home/Stats";
+import FeatureUSSD from "@/components/home/FeatureUSSD";
+import Partners from "@/components/home/Partners";
+import FeatureAPI from "@/components/home/FeatureAPI";
+import CTA from "@/components/home/CTA";
 
 export default function Home() {
   return (
