@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import ScrollReveal from "@/components/ui/ScrollReveal";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 export default function Partners() {
   const topRow = [
