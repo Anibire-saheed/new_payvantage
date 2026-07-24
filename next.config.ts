@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
   experimental: {
     scrollRestoration: true,
   },
+  devIndicators: false,
 };
 
 export default nextConfig;
