@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export default function Hero() {
   return (
     <section className="relative w-full flex flex-col  overflow-hidden h-[calc(100vh-65px)] lg:h-[calc(100vh-90px)]">

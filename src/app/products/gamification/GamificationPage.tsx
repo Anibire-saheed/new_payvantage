@@ -157,7 +157,7 @@ export default function GamificationPage() {
               </h2>
 
               <p className="text-black text-[13px] md:text-[14px] max-w-2xl mx-auto mb-6 font-bold px-4 md:px-0">
-                Let's get your business connected to every mobile network in
+                Let&apos;s get your business connected to every mobile network in
                 Nigeria
                 <br />
                 with zero carrier delays.
