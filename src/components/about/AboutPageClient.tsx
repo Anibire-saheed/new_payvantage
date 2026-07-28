@@ -348,11 +348,10 @@ export default function AboutPageClient() {
                 October 2025
               </span>
               <h3 className="text-[#1a1a1a] font-extrabold text-[16px] mb-1">
-                Nigeria's first developed locally core banking system
+                Nigeria&apos;s first developed locally core banking system
               </h3>
               <p className="text-gray-500 text-[14px] font-medium leading-relaxed">
-                Partnered with Ethica to launch Nigeria's first developed core banking system, delivering a secure and scalable banking platform.
-
+                Partnered with Ethica to launch Nigeria&apos;s first developed core banking system, delivering a secure and scalable banking platform.
               </p>
             </div>
             <div className="absolute top-[50%] -translate-y-1/2 left-[30px] md:left-1/2 w-5.5 h-5.5 bg-[#F5F6FA] rounded-full border-[5px] border-white -ml-6 md:-ml-[11px] z-20" />
