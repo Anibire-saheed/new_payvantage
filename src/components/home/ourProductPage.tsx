@@ -54,9 +54,9 @@ export default function OurProductPage() {
                 </p>
                 <Link
                   href={card.link}
-                  className="bg-[#5153A0] text-white text-[14px] font-semibold px-5 py-2.5 rounded-md hover:opacity-90 transition-colors mt-auto w-fit"
+                  className="bg-[#5153A0] text-white text-[14px] font-semibold px-5 py-4 rounded-md hover:opacity-90 transition-colors mt-auto w-fit"
                 >
-                  Learn more
+                  Learn More
                 </Link>
               </div>
             </ScrollReveal>

@@ -8,10 +8,13 @@ import { store } from "@/store/store";
 export default function Providers({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     const handleUnhandledRejection = (event: PromiseRejectionEvent) => {
+      const reason = event.reason;
       if (
-        !event.reason ||
-        event.reason instanceof Event ||
-        (typeof event.reason === "object" && event.reason?.constructor?.name === "Event")
+        !reason ||
+        reason instanceof Event ||
+        (typeof reason === "object" && reason?.constructor?.name === "Event") ||
+        reason?.name === "AxiosError" ||
+        reason?.message === "Network Error"
       ) {
         event.preventDefault();
       }
@@ -28,7 +31,8 @@ export default function Providers({ children }: { children: React.ReactNode }) {
         defaultOptions: {
           queries: {
             staleTime: 5 * 60 * 1000,
-            refetchOnWindowFocus: true,
+            retry: 1,
+            refetchOnWindowFocus: false,
             refetchOnMount: true,
             refetchOnReconnect: true,
           },
