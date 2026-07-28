@@ -60,7 +60,7 @@ export default function LivelinessPage() {
               className="w-full sm:w-auto"
             >
               <a href="mailto:info@payvantage.com.ng?subject=Book%20A%20Demo">
-                Explore features
+                Book A Demo
               </a>
             </Button>
             <Button
@@ -70,7 +70,7 @@ export default function LivelinessPage() {
               className="w-full sm:w-auto text-center"
             >
               <a href="mailto:info@payvantage.com.ng?subject=Contact%20Sales">
-                Book A Demo
+                Contact Sales
               </a>
             </Button>
           </div>
@@ -162,7 +162,7 @@ export default function LivelinessPage() {
               title: "99.9% Match Accuracy",
               description:
                 "Every verification produces a confident, real-time match for reliable identity confirmation.",
-              icon: "/icons/liveliness/99.9% Match Accuracy.svg",
+              icon: "/icons/liveliness/99.svg",
             },
           ].map((item, index) => (
             <ScrollReveal

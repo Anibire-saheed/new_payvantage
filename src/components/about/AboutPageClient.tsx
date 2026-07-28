@@ -40,7 +40,7 @@ export default function AboutPageClient() {
               className="w-full sm:w-auto"
             >
               Read Our Story
-              <ChevronDownIcon className="w-5 h-5 ml-1" />
+              <ChevronDownIcon className="w-5 h-5 ml-1 mt-2" />
             </Button>
             <Button
               asChild

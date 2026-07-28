@@ -25,7 +25,7 @@ export default function CTA() {
 
             <Button asChild variant="default" size="lg" className="mb-10">
               <a href="mailto:info@payvantage.com.ng?subject=Book%20A%20Demo">
-                BOOK A DEMO
+               Book A Demo
               </a>
             </Button>
           </ScrollReveal>

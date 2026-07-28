@@ -60,7 +60,7 @@ export default function VirtualAccountsPage() {
               className="w-full sm:w-auto"
             >
               <a href="mailto:info@payvantage.com.ng?subject=Book%20A%20Demo">
-                Explore features
+                Book A Demo
               </a>
             </Button>
             <Button
@@ -70,7 +70,7 @@ export default function VirtualAccountsPage() {
               className="w-full sm:w-auto text-center"
             >
               <a href="mailto:info@payvantage.com.ng?subject=Contact%20Sales">
-                View API Docs
+                Contact Sales
               </a>
             </Button>
           </div>
