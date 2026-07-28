@@ -1,4 +1,21 @@
+"use client";
+
+import { useEffect, useRef } from "react";
+
 export default function Hero() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      const playPromise = videoRef.current.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {
+          // Suppress video autoplay rejection errors
+        });
+      }
+    }
+  }, []);
+
   return (
     <section className="relative w-full flex flex-col  overflow-hidden h-[calc(100vh-65px)] lg:h-[calc(100vh-90px)]">
       {/* Background Image/Pattern */}
@@ -21,6 +38,7 @@ export default function Hero() {
             priority
           />{" "} */}
         <video
+          ref={videoRef}
           src="/video/bg_hero.mp4"
           autoPlay
           muted
