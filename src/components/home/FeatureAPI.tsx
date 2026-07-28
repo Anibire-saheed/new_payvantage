@@ -1,5 +1,6 @@
 import Image from "next/image";
 import ScrollReveal from "@/components/ui/ScrollReveal";
+import { Button } from "@/components/ui/button";
 
 export default function FeatureAPI() {
   return (
@@ -19,10 +20,7 @@ export default function FeatureAPI() {
             Our well-documented and easy-to-use APIs make integrating and
             accessing reliable payment functionalities easy for your developers.
           </p>
-          <button
-            type="button"
-            className="bg-[#5153A0] text-white px-8 py-5 rounded-lg font-bold hover:opacity-90 transition-all shadow-lg"
-          >
+          <Button asChild variant="brand" size="lg">
             <a
               target="_blank"
               rel="noopener noreferrer"
@@ -30,7 +28,7 @@ export default function FeatureAPI() {
             >
               View API Documentation
             </a>
-          </button>
+          </Button>
         </ScrollReveal>
 
         <ScrollReveal from="right" className="lg:w-230 relative">

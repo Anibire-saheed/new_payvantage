@@ -17,7 +17,7 @@ function transformApiJob(apiJob: ApiJob): Job {
     department: apiJob.entity?.name ?? "",
     type:
       apiJob.workMode ?? apiJob.type ?? apiJob.employmentType ?? "Full-time",
-    description: apiJob.overview ?? " locoeje",
+    description: apiJob.overview ?? "",
   };
 }
 

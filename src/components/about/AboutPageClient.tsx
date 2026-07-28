@@ -4,6 +4,7 @@ import Image from "next/image";
 import Stats from "@/components/home/Stats";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { ChevronDownIcon } from "@/components/about/DropIcon";
+import { Button } from "@/components/ui/button";
 
 export default function AboutPageClient() {
   const handleReadOurStory = () => {
@@ -31,20 +32,26 @@ export default function AboutPageClient() {
             creating value for everyday operations.
           </p>
           <div className="flex flex-col sm:flex-row items-center gap-4">
-            <button
+            <Button
               type="button"
               onClick={handleReadOurStory}
-              className="w-full sm:w-auto bg-brand-primary text-white px-8 py-5 rounded-md font-bold hover:bg-brand-logo shadow-md transition-all text-sm flex items-center justify-center gap-2 cursor-pointer"
+              variant="default"
+              size="lg"
+              className="w-full sm:w-auto"
             >
               Read Our Story
-              <ChevronDownIcon className="w-5 h-5" />
-            </button>
-            <a
-              href="mailto:info@payvantage.com.ng?subject=Book%20A%20Demo"
-              className="w-full sm:w-auto bg-[#5153A01A] text-[#5153A0] px-8 py-5 rounded-md font-bold hover:bg-[#F4F5F9] transition-all text-sm text-center"
+              <ChevronDownIcon className="w-5 h-5 ml-1" />
+            </Button>
+            <Button
+              asChild
+              variant="secondary"
+              size="lg"
+              className="w-full sm:w-auto text-center"
             >
-              Book A Demo
-            </a>
+              <a href="mailto:info@payvantage.com.ng?subject=Book%20A%20Demo">
+                Book A Demo
+              </a>
+            </Button>
           </div>
         </ScrollReveal>
 
@@ -401,12 +408,11 @@ export default function AboutPageClient() {
                 <br className="hidden md:block" /> suite of payment solutions.
               </p>
 
-              <a
-                href="mailto:info@payvantage.com.ng?subject=Book%20A%20Demo"
-                className="inline-block bg-brand-primary text-white px-10 py-4 rounded-lg font-bold hover:scale-105 transition-all shadow-xl mb-16"
-              >
-                BOOK A DEMO
-              </a>
+              <Button asChild variant="default" size="lg" className="mb-16">
+                <a href="mailto:info@payvantage.com.ng?subject=Book%20A%20Demo">
+                  BOOK A DEMO
+                </a>
+              </Button>
             </ScrollReveal>
           </div>
         </div>

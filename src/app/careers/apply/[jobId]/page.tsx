@@ -16,6 +16,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 import { applyForJob, fetchJobById } from "@/lib/api/careers";
 import {
   jobApplicationFormSchema,
@@ -62,13 +63,15 @@ function ApplyPageContent() {
     <main className="min-h-screen bg-white py-12 px-6 lg:px-12">
       {/* Back link */}
       <div className="max-w-2xl mx-auto">
-        <button
+        <Button
           type="button"
+          variant="ghost"
+          size="sm"
           onClick={() => router.back()}
-          className="flex items-center gap-2 text-[#5153A0] font-bold text-[14px] mb-10 hover:opacity-75 transition-opacity"
+          className="text-[#5153A0] font-bold text-[14px] mb-10 hover:opacity-75 hover:bg-transparent transition-opacity p-0"
         >
           <svg
-            className="w-4 h-4"
+            className="w-4 h-4 mr-1"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -81,7 +84,7 @@ function ApplyPageContent() {
             />
           </svg>
           back
-        </button>
+        </Button>
 
         {isSuccess ? (
           <div className="flex flex-col items-center justify-center py-20 text-center">
@@ -107,13 +110,14 @@ function ApplyPageContent() {
               Thanks for applying for the <strong>{jobTitle}</strong> position.
               We&apos;ll review your application and be in touch soon.
             </p>
-            <button
+            <Button
               type="button"
               onClick={() => router.push("/careers")}
-              className="bg-brand-primary text-white py-3 px-10 rounded-lg font-bold text-[14px] hover:opacity-90 transition-all"
+              variant="default"
+              size="lg"
             >
               Back to Careers
-            </button>
+            </Button>
           </div>
         ) : (
           <>
@@ -251,13 +255,15 @@ function ApplyPageContent() {
 
                 {/* Submit */}
                 <div className="pt-4">
-                  <button
+                  <Button
                     type="submit"
                     disabled={isPending}
-                    className="w-full bg-brand-primary text-white py-4 rounded-lg font-bold text-[15px] shadow-lg hover:opacity-95 transition-all active:scale-[0.99]  disabled:opacity-60 disabled:cursor-not-allowed"
+                    variant="default"
+                    size="lg"
+                    className="w-full"
                   >
                     {isPending ? "Submitting…" : "Submit Application"}
-                  </button>
+                  </Button>
                 </div>
               </form>
             </Form>

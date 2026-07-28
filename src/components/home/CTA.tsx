@@ -1,5 +1,6 @@
 import Image from "next/image";
 import ScrollReveal from "@/components/ui/ScrollReveal";
+import { Button } from "@/components/ui/button";
 
 export default function CTA() {
   return (
@@ -22,12 +23,11 @@ export default function CTA() {
               <br className="hidden md:block" /> suite of payment solutions.
             </p>
 
-            <a
-              href="mailto:info@payvantage.com.ng?subject=Book%20A%20Demo"
-              className="inline-block bg-brand-primary text-white px-5 py-5 rounded-lg font-bold hover:scale-105 transition-all shadow-xl mb-10"
-            >
-              BOOK A DEMO
-            </a>
+            <Button asChild variant="default" size="lg" className="mb-10">
+              <a href="mailto:info@payvantage.com.ng?subject=Book%20A%20Demo">
+                BOOK A DEMO
+              </a>
+            </Button>
           </ScrollReveal>
         </div>
       </div>

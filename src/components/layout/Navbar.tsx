@@ -119,6 +119,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { Button } from "@/components/ui/button";
 
 export default function Navbar() {
   const router = useRouter();
@@ -189,20 +190,20 @@ export default function Navbar() {
 
       {/* Desktop Action Buttons */}
       <div className="hidden lg:flex items-center space-x-4">
-        <Link
-          href="https://payvantage.gitbook.io/payvantage.gitbook.io"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-white text-sm font-medium px-5 py-2.5 border border-gray-400 rounded-md hover:bg-white/10 transition-colors"
-        >
-          View API Docs
-        </Link>
-        <Link
-          href="mailto:info@payvantage.com.ng?subject=Book%20A%20Demo"
-          className="text-[#2C2E6A] bg-gray-50 text-sm font-medium px-5 py-2.5 rounded-md hover:bg-gray-200 transition-colors shadow-sm"
-        >
-          Book A Demo
-        </Link>
+        <Button asChild variant="outline" size="sm">
+          <Link
+            href="https://payvantage.gitbook.io/payvantage.gitbook.io"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View API Docs
+          </Link>
+        </Button>
+        <Button asChild variant="white" size="sm">
+          <Link href="mailto:info@payvantage.com.ng?subject=Book%20A%20Demo">
+            Book A Demo
+          </Link>
+        </Button>
       </div>
 
       {/* Mobile Hamburger */}
@@ -295,22 +296,24 @@ export default function Navbar() {
           </Link>
 
           <div className="flex flex-col space-y-4 pt-6 border-t border-slate-500/50">
-            <Link
-              href="https://payvantage.gitbook.io/payvantage.gitbook.io"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="text-white w-full text-center text-base font-medium px-5 py-3 border border-gray-400 rounded-md hover:bg-white/10 transition-colors"
-            >
-              View API Docs
-            </Link>
-            <Link
-              href="mailto:info@payvantage.com.ng?subject=Book%20A%20Demo"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="text-[#2C2E6A] w-full text-center bg-gray-50 text-base font-medium px-5 py-3 rounded-md hover:bg-gray-200 transition-colors shadow-sm"
-            >
-              Book A Demo
-            </Link>
+            <Button asChild variant="outline" size="default" className="w-full">
+              <Link
+                href="https://payvantage.gitbook.io/payvantage.gitbook.io"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                View API Docs
+              </Link>
+            </Button>
+            <Button asChild variant="white" size="default" className="w-full">
+              <Link
+                href="mailto:info@payvantage.com.ng?subject=Book%20A%20Demo"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Book A Demo
+              </Link>
+            </Button>
           </div>
         </div>
       </div>

@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import CtaImage from "@/components/ui/ctaImage";
+import { Button } from "@/components/ui/button";
 
 export default function AddressVerificationPage() {
   const router = useRouter();
@@ -12,9 +13,11 @@ export default function AddressVerificationPage() {
     <main className="flex min-h-screen flex-col bg-white overflow-hidden">
       {/* Back Button */}
       <div className="px-6 lg:px-12 max-w-7xl mx-auto w-full pt-4">
-        <button
+        <Button
+          variant="ghost"
+          size="sm"
           onClick={() => router.back()}
-          className="flex items-center gap-2 text-gray-600 font-medium hover:text-[#5153A0] transition-colors"
+          className="text-gray-600 font-medium hover:text-[#5153A0] hover:bg-transparent p-0"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -30,7 +33,7 @@ export default function AddressVerificationPage() {
             <path d="m15 18-6-6 6-6" />
           </svg>
           Back
-        </button>
+        </Button>
       </div>
 
       {/* Hero Section */}
@@ -47,18 +50,26 @@ export default function AddressVerificationPage() {
             and streamline onboarding.
           </p>
           <div className="flex flex-col sm:flex-row items-center gap-4">
-            <a
-              href="mailto:info@payvantage.com.ng?subject=Book%20A%20Demo"
-              className="w-full sm:w-auto bg-brand-primary text-white px-5 py-5 rounded-md font-bold hover:bg-brand-logo shadow-md transition-all text-sm flex items-center justify-center gap-2 cursor-pointer"
+            <Button
+              asChild
+              variant="default"
+              size="lg"
+              className="w-full sm:w-auto"
             >
-              Book A Demo
-            </a>
-            <a
-              href="mailto:info@payvantage.com.ng?subject=Contact%20Sales"
-              className="w-full sm:w-auto bg-[#5153A01A] text-[#5153A0] px-5 py-5 rounded-md font-bold hover:bg-[#F4F5F9] transition-all text-sm text-center"
+              <a href="mailto:info@payvantage.com.ng?subject=Book%20A%20Demo">
+                Book A Demo
+              </a>
+            </Button>
+            <Button
+              asChild
+              variant="secondary"
+              size="lg"
+              className="w-full sm:w-auto text-center"
             >
-              Contact Sales
-            </a>
+              <a href="mailto:info@payvantage.com.ng?subject=Contact%20Sales">
+                Contact Sales
+              </a>
+            </Button>
           </div>
         </ScrollReveal>
 
@@ -195,12 +206,11 @@ export default function AddressVerificationPage() {
                 with zero carrier delays.
               </p>
 
-              <a
-                href="mailto:info@payvantage.com.ng?subject=Book%20A%20Demo"
-                className="inline-block bg-brand-primary text-white px-5 py-5  rounded-lg font-bold hover:scale-105 transition-all shadow-xl mb-8"
-              >
-                Book Your Demo
-              </a>
+              <Button asChild variant="default" size="lg" className="mb-8">
+                <a href="mailto:info@payvantage.com.ng?subject=Book%20A%20Demo">
+                  Book Your Demo
+                </a>
+              </Button>
             </ScrollReveal>
           </div>
         </div>

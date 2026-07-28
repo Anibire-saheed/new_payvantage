@@ -42,6 +42,36 @@ export default function RootLayout({
       lang="en"
       className={`${schibstedGrotesk.variable} h-full antialiased overflow-x-hidden`}
     >
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                function isEventObj(r) {
+                  if (!r) return true;
+                  if (typeof Event !== 'undefined' && r instanceof Event) return true;
+                  if (Object.prototype.toString.call(r) === '[object Event]') return true;
+                  if (typeof r === 'object' && r !== null && 'isTrusted' in r && 'type' in r) return true;
+                  if (typeof r === 'object' && r !== null && typeof r.message === 'string' && r.message.indexOf('[object Event]') !== -1) return true;
+                  return false;
+                }
+                window.addEventListener('unhandledrejection', function(e) {
+                  if (isEventObj(e.reason)) {
+                    e.preventDefault();
+                    e.stopImmediatePropagation();
+                  }
+                }, true);
+                window.addEventListener('error', function(e) {
+                  if (isEventObj(e.error) || isEventObj(e)) {
+                    e.preventDefault();
+                    e.stopImmediatePropagation();
+                  }
+                }, true);
+              })();
+            `,
+          }}
+        />
+      </head>
       <body className="min-h-full flex flex-col text-foreground bg-background">
         <Providers>
           <Navbar />

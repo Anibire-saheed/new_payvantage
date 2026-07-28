@@ -16,6 +16,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 import { applyForJob, fetchJobById } from "@/lib/api/careers";
 import {
   jobApplicationFormSchema,
@@ -124,7 +125,7 @@ export default function JobApplyModal({
           <button
             onClick={onClose}
             aria-label="Close modal"
-            className="absolute top-6 right-6 text-gray-400 hover:text-gray-600 transition-colors p-2"
+            className="absolute top-6 right-6 text-gray-400 hover:text-gray-600 transition-colors p-2 cursor-pointer"
           >
             <svg
               className="w-5 h-5"
@@ -167,13 +168,14 @@ export default function JobApplyModal({
                 position. We&apos;ll review your application and be in touch
                 soon.
               </p>
-              <button
+              <Button
                 type="button"
                 onClick={onClose}
-                className="bg-[#3E4095] text-white py-3 px-10 rounded-lg font-bold text-[14px] hover:opacity-90 transition-all"
+                variant="default"
+                size="lg"
               >
                 Close
-              </button>
+              </Button>
             </div>
           ) : (
             <>
@@ -298,13 +300,15 @@ export default function JobApplyModal({
 
                   {/* Submit */}
                   <div className="pt-4">
-                    <button
+                    <Button
                       type="submit"
                       disabled={isPending}
-                      className="w-full bg-[#3E4095] text-white py-4 rounded-lg font-bold text-[15px] shadow-lg hover:opacity-95 transition-all active:scale-[0.99] border-b-4 border-indigo-900/60 disabled:opacity-60 disabled:cursor-not-allowed"
+                      variant="default"
+                      size="lg"
+                      className="w-full"
                     >
                       {isPending ? "Submitting…" : "Submit Application"}
-                    </button>
+                    </Button>
                   </div>
                 </form>
               </Form>

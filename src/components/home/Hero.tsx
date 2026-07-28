@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { Button } from "@/components/ui/button";
 
 export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -20,23 +21,6 @@ export default function Hero() {
     <section className="relative w-full flex flex-col  overflow-hidden h-[calc(100vh-65px)] lg:h-[calc(100vh-90px)]">
       {/* Background Image/Pattern */}
       <div className="absolute inset-0 pointer-events-none">
-        {/* <Image
-          src="/image/firstpage_bg.svg"
-          alt="background pattern"
-          fill
-          className="object-cover object-center "
-          priority
-        />
-        {/* Overlaying Outline Asset */}
-        {/* <div className="absolute bottom-0 left-0 w-full pointer-events-none overflow-hidden "> */}
-        {/* <Image
-            src="/image/Outline_bg.svg"
-            alt="outline overlay"
-            width={1440}
-            height={263}
-            className="w-full h-auto object-cover lg:object-contain object-bottom"
-            priority
-          />{" "} */}
         <video
           ref={videoRef}
           src="/video/bg_hero.mp4"
@@ -77,20 +61,19 @@ export default function Hero() {
         </p>
 
         <div className="flex flex-row items-center justify-center space-x-3 sm:space-x-4 w-full px-2 mt-4 sm:mt-0 animate-fade-up anim-delay-450">
-          <a
-            href="mailto:info@payvantage.com.ng?subject=Book%20A%20Demo"
-            className="flex-1 sm:flex-initial sm:max-w-none bg-white text-brand-logo px-3 py-3.5 sm:px-3.75 sm:py-5 rounded-md text-[13px] sm:text-[15px] font-semibold hover:bg-gray-100 transition-all shadow-md text-center"
-          >
-            Book A Demo
-          </a>
-          <a
-            href="mailto:info@payvantage.com.ng?subject=Contact%20Sales"
-            className="flex-1 sm:flex-initial sm:max-w-none bg-[#5153A0] text-white hover:bg-[#5153A0]/60 px-3 py-3.5 sm:px-3.75 sm:py-5 rounded-md text-[13px] sm:text-[15px] font-semibold transition-all text-center"
-          >
-            Contact Sales
-          </a>
+          <Button asChild variant="white" size="lg" className="flex-1 sm:flex-initial">
+            <a href="mailto:info@payvantage.com.ng?subject=Book%20A%20Demo">
+              Book A Demo
+            </a>
+          </Button>
+          <Button asChild variant="brand" size="lg" className="flex-1 sm:flex-initial">
+            <a href="mailto:info@payvantage.com.ng?subject=Contact%20Sales">
+              Contact Sales
+            </a>
+          </Button>
         </div>
       </div>
     </section>
   );
 }
+

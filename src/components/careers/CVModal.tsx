@@ -805,6 +805,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import { createPortal } from "react-dom";
 import { useQuery, useMutation } from "@tanstack/react-query";
 import { toast } from "sonner";
+import { Button } from "@/components/ui/button";
 import { allDepartments, submitApplication } from "@/lib/api/talentPool";
 import type { Department } from "@/lib/api/types";
 
@@ -1048,13 +1049,14 @@ export default function CVModal({ isOpen, onClose }: CVModalProps) {
                 on file and be in touch when relevant opportunities become
                 available at Payvantage.
               </p>
-              <button
+              <Button
                 type="button"
                 onClick={handleClose}
-                className="bg-brand-primary text-white py-3 px-10 rounded-lg font-bold text-[14px] hover:opacity-90 transition-all"
+                variant="default"
+                size="lg"
               >
                 Close
-              </button>
+              </Button>
             </div>
           ) : (
             <>
@@ -1412,13 +1414,15 @@ export default function CVModal({ isOpen, onClose }: CVModalProps) {
 
                 {/* Submit */}
                 <div className={`${fieldClass}`} style={fieldStyle(7)}>
-                  <button
+                  <Button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full py-4 bg-brand-primary text-white rounded-lg font-bold text-[15px] shadow-lg hover:opacity-90 hover:shadow-xl hover:-translate-y-px transition-all duration-200 active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed"
+                    variant="default"
+                    size="lg"
+                    className="w-full"
                   >
                     {isSubmitting ? "Submitting..." : "Submit CV/Resume"}
-                  </button>
+                  </Button>
                 </div>
               </form>
             </>
