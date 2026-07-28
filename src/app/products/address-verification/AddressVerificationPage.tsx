@@ -29,7 +29,7 @@ export default function AddressVerificationPage() {
           >
             <path d="m15 18-6-6 6-6" />
           </svg>
-          back
+          Back
         </button>
       </div>
 

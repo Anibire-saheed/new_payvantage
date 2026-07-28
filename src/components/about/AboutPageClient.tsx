@@ -336,6 +336,49 @@ export default function AboutPageClient() {
               </p>
             </div>
           </ScrollReveal>
+          {/* Milestone 5 */}
+          <ScrollReveal
+            from="left"
+            className="relative mb-6 w-full flex flex-col md:flex-row items-center justify-between"
+          >
+            <div className="w-[calc(100%-0.5rem)] md:w-[45%] bg-white p-6 rounded-lg shadow-sm text-left relative z-10 ml-5 md:ml-0 md:text-left">
+              <div className="hidden md:block absolute top-[50%] -translate-y-1/2 -right-2.5 w-5.5 h-5.5 bg-white rotate-45 rounded-[2px] -z-10" />
+              <div className="block md:hidden absolute top-[50%] -translate-y-1/2 -left-[10px] w-5.5 h-5.5 bg-white rotate-45 rounded-[2px] -z-10" />
+              <span className="text-brand-primary font-bold text-[14px] md:text-[15px] mb-2 block">
+                October 2025
+              </span>
+              <h3 className="text-[#1a1a1a] font-extrabold text-[16px] mb-1">
+                Nigeria's first developed locally core banking system
+              </h3>
+              <p className="text-gray-500 text-[14px] font-medium leading-relaxed">
+                Partnered with Ethica to launch Nigeria's first developed core banking system, delivering a secure and scalable banking platform.
+
+              </p>
+            </div>
+            <div className="absolute top-[50%] -translate-y-1/2 left-[30px] md:left-1/2 w-5.5 h-5.5 bg-[#F5F6FA] rounded-full border-[5px] border-white -ml-6 md:-ml-[11px] z-20" />
+            <div className="hidden md:block w-[45%]" />
+          </ScrollReveal>
+          {/* Milestone 6 */}
+          <ScrollReveal
+            from="right"
+            delay={100}
+            className="relative mb-6 w-full flex flex-col md:flex-row items-center justify-between"
+          >
+            <div className="hidden md:block w-[45%]" />
+            <div className="absolute top-[50%] -translate-y-1/2 left-7.5 md:left-1/2 w-5.5 h-5.5 bg-[#F5F6FA] rounded-full border-[5px] border-white -ml-6 md:-ml-2.75 z-20" />
+            <div className="w-[calc(100%-0.5rem)] md:w-[45%] bg-white p-6 rounded-lg shadow-sm text-left relative z-10 ml-5 md:ml-0">
+              <div className="absolute top-[50%] -translate-y-1/2 -left-2.5 w-5.5 h-5.5 bg-white rotate-45 rounded-xs -z-10" />
+              <span className="text-brand-primary font-bold text-[14px] md:text-[15px] mb-2 block">
+                April 2026
+              </span>
+              <h3 className="text-[#1a1a1a] font-extrabold text-[16px] mb-1">
+             Launched flagship products
+              </h3>
+              <p className="text-gray-500 text-[14px] font-medium leading-relaxed">
+                Launched Liveliness, along with a portfolio of innovative digital solutions designed to enhance customer engagement and 
+              </p>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 

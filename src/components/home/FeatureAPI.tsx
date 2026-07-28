@@ -21,7 +21,7 @@ export default function FeatureAPI() {
           </p>
           <button
             type="button"
-            className="bg-[#5153A0] text-white px-8 py-3.5 rounded-lg font-bold hover:opacity-90 transition-all shadow-lg"
+            className="bg-[#5153A0] text-white px-8 py-5 rounded-lg font-bold hover:opacity-90 transition-all shadow-lg"
           >
             <a
               target="_blank"

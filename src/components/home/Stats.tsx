@@ -64,7 +64,7 @@ export default function Stats() {
     },
     {
       value: "1.94+ Billion",
-      label: "Transactions Count",
+      label: "Transaction Count",
     },
     {
       value: "33.6+ Million",
