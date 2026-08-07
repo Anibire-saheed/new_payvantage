@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import CtaImage from "@/components/ui/ctaImage";
@@ -56,9 +57,9 @@ export default function VASPage() {
               size="lg"
               className="w-full sm:w-auto"
             >
-              <a href="mailto:info@payvantage.com.ng?subject=Book%20A%20Demo">
+              <Link href="/book-demo?product=VAS%20-%20Value%20Added%20Services">
                 Book A Demo
-              </a>
+              </Link>
             </Button>
             <Button
               asChild
@@ -80,7 +81,7 @@ export default function VASPage() {
         >
           <div className="rounded-xl w-full h-55 sm:h-70 md:h-87.5 relative overflow-hidden mix-blend-multiply">
             <Image
-              src="/image/product_4.svg"
+              src="/image/products/product_4.svg"
               alt="VAS - Value Added Services"
               fill
               className="object-contain object-center"
@@ -131,7 +132,7 @@ export default function VASPage() {
             >
               <div className="bg-[#EFF0F6] p-8 rounded-2xl border-b-4 border-gray-200 flex flex-col items-start text-left relative overflow-hidden flex-1">
                 {/* Top section with icon and number */}
-                <div className="flex justify-between items-start w-full mb-6 relative z-10">
+                <div className="flex justify-between items-center w-full mb-6 relative z-10">
                   {/* Placeholder for small icon */}
                   <div className="w-16 h-16 bg-gray-300 rounded-xl flex-shrink-0" />
 
@@ -174,9 +175,9 @@ export default function VASPage() {
               </p>
 
               <Button asChild variant="default" size="lg" className="mb-8">
-                <a href="mailto:info@payvantage.com.ng?subject=Book%20A%20Demo">
+                <Link href="/book-demo?product=VAS%20-%20Value%20Added%20Services">
                   Book Your Demo
-                </a>
+                </Link>
               </Button>
             </ScrollReveal>
           </div>

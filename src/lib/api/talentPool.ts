@@ -1,5 +1,9 @@
 import api from "./axios";
-import type { Department, SubmitPayload, SubmitResponse } from "./types";
+import type {
+  Department,
+  SubmitPayload,
+  SubmitResponse,
+} from "./types/talent.types";
 
 const ENDPOINTS = {
   BASE: "talent-pool",

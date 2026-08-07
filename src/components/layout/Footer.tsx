@@ -38,7 +38,7 @@ export default function Footer() {
         <ScrollReveal>
           <div className="w-full mb-4 text-left">
             <Image
-              src="/image/logo.svg"
+              src="/image/logos/logo.svg"
               alt="Payvantage Logo"
               width={160}
               height={40}
@@ -62,7 +62,7 @@ export default function Footer() {
                 className="flex items-center justify-center"
               >
                 <Image
-                  src="/image/in_logo.svg"
+                  src="/image/logos/in_logo.svg"
                   alt=""
                   width={24}
                   height={24}
@@ -78,7 +78,7 @@ export default function Footer() {
                 className="flex items-center justify-center"
               >
                 <Image
-                  src="/image/instagram_logo.svg"
+                  src="/image/logos/instagram_logo.svg"
                   alt=""
                   width={24}
                   height={24}
@@ -94,7 +94,7 @@ export default function Footer() {
                 className="flex items-center justify-center"
               >
                 <Image
-                  src="/image/facebook_logo.svg"
+                  src="/image/logos/facebook_logo.svg"
                   alt=""
                   width={24}
                   height={24}
@@ -203,7 +203,7 @@ export default function Footer() {
             <div className="flex flex-col items-start md:items-center sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 w-full md:w-auto text-left">
               <div className="bg-white px-3 py-1.5 rounded-md justify-center shadow-sm self-start">
                 <Image
-                  src="/image/pci.svg"
+                  src="/image/logos/pci.svg"
                   alt="PCI DSS Compliant"
                   width={90}
                   height={28}

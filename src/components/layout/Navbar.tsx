@@ -147,7 +147,7 @@ export default function Navbar() {
       <div className="flex items-center">
         <Link href="/">
           <Image
-            src="/image/logo.svg"
+            src="/image/logos/logo.svg"
             alt="Payvantage Logo"
             width={150}
             height={40}
@@ -200,7 +200,7 @@ export default function Navbar() {
           </Link>
         </Button>
         <Button asChild variant="white" size="sm">
-          <Link href="mailto:info@payvantage.com.ng?subject=Book%20A%20Demo">
+          <Link href="/book-demo">
             Book A Demo
           </Link>
         </Button>
@@ -308,7 +308,7 @@ export default function Navbar() {
             </Button>
             <Button asChild variant="white" size="default" className="w-full">
               <Link
-                href="mailto:info@payvantage.com.ng?subject=Book%20A%20Demo"
+                href="/book-demo"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Book A Demo

@@ -8,47 +8,47 @@ export default function Partners() {
   const topRow = [
     {
       name: "Habari",
-      src: "/image/habaripay.svg",
+      src: "/image/partners/habaripay.svg",
     },
     {
       name: "MTN",
-      src: "/image/mtn.png",
+      src: "/image/partners/mtn.png",
     },
     {
       name: "AWS",
-      src: "/image/aws.png",
+      src: "/image/partners/aws.png",
     },
     {
       name: "Jaiz",
-      src: "/image/Jaiz.png",
+      src: "/image/partners/Jaiz.png",
     },
     {
       name: "CreditSwitch",
-      src: "/image/creditswitch.png",
+      src: "/image/partners/creditswitch.png",
     },
     {
       name: "ethica",
-      src: "/image/EthicaLogo.svg",
+      src: "/image/partners/EthicaLogo.svg",
     },
     {
       name: "ZippyWorld",
-      src: "/image/zippylogo.svg",
+      src: "/image/partners/zippylogo.svg",
     },
     {
       name: "Waec",
-      src: "/image/waec.svg",
+      src: "/image/partners/waec.svg",
     },
     {
       name: "Jamb",
-      src: "/image/jamb.svg",
+      src: "/image/partners/jamb.svg",
     },
     {
       name: "T2",
-      src: "/image/t2.svg",
+      src: "/image/partners/t2.svg",
     },
     {
       name: "Glo",
-      src: "/image/glo.svg",
+      src: "/image/partners/glo.svg",
     },
   ];
 

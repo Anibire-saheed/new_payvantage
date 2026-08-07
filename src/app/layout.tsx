@@ -21,9 +21,9 @@ export const metadata: Metadata = {
   keywords:
     "Payvantage, Payments, Africa, Digital Payments, Mobile Payments, USSD Platform, Value Added Services, SoftPOS, Vantage Recharge, Virtual Accounts",
   icons: {
-    icon: "/image/Metalogo.png",
-    shortcut: "/image/Metalogo.png",
-    apple: "/image/Metalogo.png",
+    icon: "/image/logos/Metalogo.png",
+    shortcut: "/image/logos/Metalogo.png",
+    apple: "/image/logos/Metalogo.png",
   },
 };
 

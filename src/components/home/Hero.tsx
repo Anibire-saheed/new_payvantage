@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 export default function Hero() {
@@ -62,9 +63,9 @@ export default function Hero() {
 
         <div className="flex flex-row items-center justify-center space-x-3 sm:space-x-4 w-full px-2 mt-4 sm:mt-0 animate-fade-up anim-delay-450">
           <Button asChild variant="white" size="lg" className="flex-1 sm:flex-initial">
-            <a href="mailto:info@payvantage.com.ng?subject=Book%20A%20Demo">
+            <Link href="/book-demo">
               Book A Demo
-            </a>
+            </Link>
           </Button>
           <Button asChild variant="brand" size="lg" className="flex-1 sm:flex-initial">
             <a href="mailto:info@payvantage.com.ng?subject=Contact%20Sales">

@@ -1,5 +1,3 @@
-
-
 "use client";
 
 import Image from "next/image";
@@ -11,7 +9,7 @@ import CVModal from "@/components/careers/CVModal";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { Button } from "@/components/ui/button";
 import { fetchJobs } from "@/lib/api/careers";
-import type { Job } from "@/lib/api/types";
+import type { Job } from "@/lib/api/types/career.types";
 import { useState } from "react";
 
 export type { Job };

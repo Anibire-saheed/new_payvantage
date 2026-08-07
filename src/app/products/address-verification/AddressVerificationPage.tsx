@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import CtaImage from "@/components/ui/ctaImage";
@@ -56,9 +57,9 @@ export default function AddressVerificationPage() {
               size="lg"
               className="w-full sm:w-auto"
             >
-              <a href="mailto:info@payvantage.com.ng?subject=Book%20A%20Demo">
+              <Link href="/book-demo?product=Address%20Verification">
                 Book A Demo
-              </a>
+              </Link>
             </Button>
             <Button
               asChild
@@ -80,7 +81,7 @@ export default function AddressVerificationPage() {
         >
           <div className="rounded-xl w-full h-55 sm:h-70 md:h-87.5 relative overflow-hidden mix-blend-multiply">
             <Image
-              src="/image/product_1.svg"
+              src="/image/products/product_1.svg"
               alt="Address Verification"
               fill
               className="object-contain object-center"
@@ -155,14 +156,14 @@ export default function AddressVerificationPage() {
             >
               <div className="bg-[#EFF0F6] p-8 rounded-2xl border-b-4 border-gray-200 flex flex-col items-start text-left relative overflow-hidden flex-1 mb-">
                 {/* Top section with icon and number */}
-                <div className="flex justify-between items-start w-full mb-6 relative z-10">
+                <div className="flex justify-between items-center w-full mb-6 relative z-10">
                   <div className="w-16 h-16 bg-gray-300 rounded-xl flex-shrink-0 flex items-center justify-center overflow-hidden">
                     <Image
                       src={item.icon}
                       alt={item.title}
-                      width={40}
-                      height={40}
-                      className="w-10 h-10 object-contain "
+                      width={24}
+                      height={24}
+                      className="w-6 h-6 object-contain [filter:invert(32%)_sepia(35%)_saturate(1175%)_hue-rotate(203deg)_brightness(94%)_contrast(91%)]"
                     />
                   </div>
 
@@ -207,9 +208,9 @@ export default function AddressVerificationPage() {
               </p>
 
               <Button asChild variant="default" size="lg" className="mb-8">
-                <a href="mailto:info@payvantage.com.ng?subject=Book%20A%20Demo">
+                <Link href="/book-demo?product=Address%20Verification">
                   Book Your Demo
-                </a>
+                </Link>
               </Button>
             </ScrollReveal>
           </div>

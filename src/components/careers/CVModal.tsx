@@ -807,7 +807,7 @@ import { useQuery, useMutation } from "@tanstack/react-query";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { allDepartments, submitApplication } from "@/lib/api/talentPool";
-import type { Department } from "@/lib/api/types";
+import type { Department } from "@/lib/api/types/talent.types";
 
 interface CVModalProps {
   isOpen: boolean;

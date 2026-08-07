@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { Button } from "@/components/ui/button";
 
@@ -24,9 +25,9 @@ export default function CTA() {
             </p>
 
             <Button asChild variant="default" size="lg" className="mb-10">
-              <a href="mailto:info@payvantage.com.ng?subject=Book%20A%20Demo">
+              <Link href="/book-demo">
                Book A Demo
-              </a>
+              </Link>
             </Button>
           </ScrollReveal>
         </div>

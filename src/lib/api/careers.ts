@@ -1,5 +1,5 @@
 import api from "./axios";
-import type { ApiJob, Job, ApplyPayload } from "./types";
+import type { ApiJob, Job, ApplyPayload } from "./types/career.types";
 
 const ENDPOINTS = {
   BASE: "careers",

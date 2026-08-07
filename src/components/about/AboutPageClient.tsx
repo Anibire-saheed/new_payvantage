@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import Stats from "@/components/home/Stats";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { ChevronDownIcon } from "@/components/about/DropIcon";
@@ -48,9 +49,9 @@ export default function AboutPageClient() {
               size="lg"
               className="w-full sm:w-auto text-center"
             >
-              <a href="mailto:info@payvantage.com.ng?subject=Book%20A%20Demo">
+              <Link href="/book-demo">
                 Book A Demo
-              </a>
+              </Link>
             </Button>
           </div>
         </ScrollReveal>
@@ -111,17 +112,17 @@ export default function AboutPageClient() {
         <div className="w-full lg:w-[55%] flex flex-col space-y-4">
           {[
             {
-              icon: "/image/Built_icon1.svg",
+              icon: "/image/about/Built_icon1.svg",
               title: "What We Do",
               body: "We enable payments for merchants and customers by leveraging emerging technologies and strategic partnerships across Nigeria's financial value network.",
             },
             {
-              icon: "/image/Built_icon2.svg",
+              icon: "/image/about/Built_icon2.svg",
               title: "How We Do It",
               body: "Millions of Nigerians remain underserved by traditional financial systems. We believe every person deserves access to fast, secure, and affordable digital payments.",
             },
             {
-              icon: "/image/Built_icon3.svg",
+              icon: "/image/about/Built_icon3.svg",
               title: "Social Impact",
               body: "Through USSD platforms, virtual accounts, SoftPOS, and value-added services all underpinned by developer-friendly APIs and robust cloud infrastructure.",
             },
@@ -171,21 +172,21 @@ export default function AboutPageClient() {
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {[
             {
-              icon: "/image/about_2.svg",
+              icon: "/image/about/about_2.svg",
               tag: "Our Mission",
               title: "Deliver And Create Value",
               body: "To be the best digital technology and business insights services provider whilst adding value to all stakeholders.",
               extra: "",
             },
             {
-              icon: "/image/about_3.svg",
+              icon: "/image/about/about_3.svg",
               tag: "Our Vision",
               title: "Lead Across Africa",
               body: "To be the preferred payment enabler in sub-saharan Africa.",
               extra: "",
             },
             {
-              icon: "/image/about_1.svg",
+              icon: "/image/about/about_1.svg",
               tag: "Our Values",
               title: "Values We Live By",
               body: "TFairness, Innovation, Integrity and Excellence are values that drive us towards delivering customer-centric platforms.",
@@ -409,9 +410,9 @@ export default function AboutPageClient() {
               </p>
 
               <Button asChild variant="default" size="lg" className="mb-16">
-                <a href="mailto:info@payvantage.com.ng?subject=Book%20A%20Demo">
+                <Link href="/book-demo">
                   BOOK A DEMO
-                </a>
+                </Link>
               </Button>
             </ScrollReveal>
           </div>
