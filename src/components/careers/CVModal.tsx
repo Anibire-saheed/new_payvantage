@@ -1025,7 +1025,27 @@ export default function CVModal({ isOpen, onClose }: CVModalProps) {
         <div className="p-4 sm:p-8 lg:p-12 max-h-[90vh] overflow-y-auto">
           {/* Success State */}
           {isSuccess ? (
-            <div className="flex flex-col items-center justify-center py-12 text-center">
+            <div className="relative flex flex-col items-center justify-center py-12 text-center">
+              <button
+                title="close"
+                type="button"
+                onClick={handleClose}
+                className="absolute top-0 right-0 text-gray-400 hover:text-gray-600 hover:rotate-90 transition-all duration-200 p-2 cursor-pointer"
+              >
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
               <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4">
                 <svg
                   className="w-8 h-8 text-green-600"
@@ -1062,9 +1082,31 @@ export default function CVModal({ isOpen, onClose }: CVModalProps) {
             <>
               {/* Header */}
               <div className={`mb-8 ${fieldClass}`} style={fieldStyle(0)}>
-                <h2 className="text-xl font-extrabold text-[#111827] mb-2">
-                  Join Us
-                </h2>
+                <div className="flex items-center justify-between gap-4 mb-2">
+                  <h2 className="text-xl font-extrabold text-[#111827]">
+                    Join Us
+                  </h2>
+                  <button
+                    title="close"
+                    type="button"
+                    onClick={handleClose}
+                    className="text-gray-400 hover:text-gray-600 hover:rotate-90 transition-all duration-200 p-1 shrink-0 cursor-pointer"
+                  >
+                    <svg
+                      className="w-6 h-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M6 18L18 6M6 6l12 12"
+                      />
+                    </svg>
+                  </button>
+                </div>
                 <p className="text-[#5B799A] text-[14px] font-medium max-w-2xl leading-relaxed">
                   Share your resume to our recruiters to be added to our talent
                   pool and to receive emails regarding career opportunities at
@@ -1427,27 +1469,6 @@ export default function CVModal({ isOpen, onClose }: CVModalProps) {
               </form>
             </>
           )}
-
-          {/* Close Button */}
-          <button
-            title="close"
-            onClick={handleClose}
-            className="absolute top-6 right-6 text-gray-400 hover:text-gray-600 hover:rotate-90 transition-all duration-200 p-2"
-          >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
-          </button>
         </div>
       </div>
     </div>

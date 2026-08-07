@@ -214,10 +214,9 @@ export default function CareersPageClient() {
             </h2>
 
             <p className="text-brand-primary text-[13px] md:text-[14px] max-w-200 mx-auto mb-10 font-bold px-4 md:px-0">
-              Ready to take your career to the next level? Do you thrive in a
-              dynamic and innovative work environment and ready to make an
-              impact, we want to hear from you! Apply now and join our
-              incredible pool of talents.
+              Don’t see a role that matches your skills? We’d still love to hear
+              from you. Submit your CV to our talent pool, and we’ll contact you
+              if a suitable opportunity becomes available.
             </p>
 
             <Button

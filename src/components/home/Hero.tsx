@@ -62,19 +62,24 @@ export default function Hero() {
         </p>
 
         <div className="flex flex-row items-center justify-center space-x-3 sm:space-x-4 w-full px-2 mt-4 sm:mt-0 animate-fade-up anim-delay-450">
-          <Button asChild variant="white" size="lg" className="flex-1 sm:flex-initial">
-            <Link href="/book-demo">
-              Book A Demo
-            </Link>
+          <Button
+            asChild
+            variant="white"
+            size="lg"
+            className="flex-1 sm:flex-initial"
+          >
+            <Link href="/book-demo">Book A Demo</Link>
           </Button>
-          <Button asChild variant="brand" size="lg" className="flex-1 sm:flex-initial">
-            <a href="mailto:info@payvantage.com.ng?subject=Contact%20Sales">
-              Contact Sales
-            </a>
+          <Button
+            asChild
+            variant="brand"
+            size="lg"
+            className="flex-1 sm:flex-initial"
+          >
+            <a href="/book-demo">Contact Sales</a>
           </Button>
         </div>
       </div>
     </section>
   );
 }
-

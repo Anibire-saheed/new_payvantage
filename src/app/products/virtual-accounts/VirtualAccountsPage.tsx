@@ -70,9 +70,7 @@ export default function VirtualAccountsPage() {
               size="lg"
               className="w-full sm:w-auto text-center"
             >
-              <a href="mailto:info@payvantage.com.ng?subject=Contact%20Sales">
-                Contact Sales
-              </a>
+              <a href="/book-demo">Contact Sales</a>
             </Button>
           </div>
         </ScrollReveal>

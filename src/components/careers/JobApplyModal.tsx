@@ -121,30 +121,28 @@ export default function JobApplyModal({
         }`}
       >
         <div className="p-8 md:p-10">
-          {/* Close Button */}
-          <button
-            onClick={onClose}
-            aria-label="Close modal"
-            className="absolute top-6 right-6 text-gray-400 hover:text-gray-600 transition-colors p-2 cursor-pointer"
-          >
-            <svg
-              className="w-5 h-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2.5}
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
-          </button>
-
           {isSuccess ? (
             /* Success State */
-            <div className="flex flex-col items-center justify-center py-12 text-center">
+            <div className="relative flex flex-col items-center justify-center py-12 text-center">
+              <button
+                onClick={onClose}
+                aria-label="Close modal"
+                className="absolute top-0 right-0 text-gray-400 hover:text-gray-600 transition-colors p-1 cursor-pointer"
+              >
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2.5}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
               <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4">
                 <svg
                   className="w-8 h-8 text-green-600"
@@ -181,9 +179,30 @@ export default function JobApplyModal({
             <>
               {/* Job Details */}
               <div className="mb-8">
-                <h2 className="text-[20px] font-extrabold text-[#000000] mb-4">
-                  {jobTitle}
-                </h2>
+                <div className="flex items-center justify-between gap-4 mb-4">
+                  <h2 className="text-[20px] font-extrabold text-[#000000]">
+                    {jobTitle}
+                  </h2>
+                  <button
+                    onClick={onClose}
+                    aria-label="Close modal"
+                    className="text-gray-400 hover:text-gray-600 transition-colors p-1 shrink-0 cursor-pointer"
+                  >
+                    <svg
+                      className="w-5 h-5"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2.5}
+                        d="M6 18L18 6M6 6l12 12"
+                      />
+                    </svg>
+                  </button>
+                </div>
                 {isJobLoading ? (
                   <div className="space-y-2 mb-6">
                     <div className="h-4 bg-gray-100 rounded animate-pulse w-full" />

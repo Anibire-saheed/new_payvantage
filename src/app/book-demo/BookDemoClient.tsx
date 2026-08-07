@@ -171,7 +171,7 @@ export default function BookDemoClient() {
             Everything Your Business Needs to Grow. All in One Platform.
           </h1>
           <p className="text-[12px] md:text-[16px] text-gray-600 max-w-2xl mx-auto">
-            Book a personalized demo to explore PayVantage’s payment,
+            Book a personalised demo to explore Payvantage’s payment,
             verification, and business solutions tailored to your business
             needs.
           </p>

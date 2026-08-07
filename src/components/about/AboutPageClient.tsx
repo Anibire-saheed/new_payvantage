@@ -49,9 +49,7 @@ export default function AboutPageClient() {
               size="lg"
               className="w-full sm:w-auto text-center"
             >
-              <Link href="/book-demo">
-                Book A Demo
-              </Link>
+              <Link href="/book-demo">Book A Demo</Link>
             </Button>
           </div>
         </ScrollReveal>
@@ -87,7 +85,7 @@ export default function AboutPageClient() {
           </h2>
           <div className="space-y-6 text-black font-medium text-[16px] leading-relaxed">
             <p className="font-semibold text-[#000000] border-l-4 border-brand-logo text-[16px] pl-4 py-1 italic">
-              We set out to provide and enable payment for emerging customers —
+              We set out to provide and enable payment for emerging customers,
               addressing their pain points head-on.
             </p>
             <p>
@@ -189,7 +187,7 @@ export default function AboutPageClient() {
               icon: "/image/about/about_1.svg",
               tag: "Our Values",
               title: "Values We Live By",
-              body: "TFairness, Innovation, Integrity and Excellence are values that drive us towards delivering customer-centric platforms.",
+              body: "TFairness, Innovation, Integrity and Excellence are values that drive us towards delivering customer centric platforms.",
               extra:
                 "md:col-span-2 md:w-[calc(50%-12px)] md:mx-auto lg:col-span-1 lg:w-full lg:mx-0",
             },
@@ -240,7 +238,7 @@ export default function AboutPageClient() {
             Milestones That Shaped Us
           </h2>
           <p className="text-[#1a1a1a] font-bold text-[15px]">
-            From an idea to a trusted payment infrastructure — here&apos;s how
+            From an idea to a trusted payment infrastructure. here&apos;s how
             Payvantage grew.
           </p>
         </ScrollReveal>
@@ -313,7 +311,7 @@ export default function AboutPageClient() {
               </h3>
               <p className="text-gray-500 text-[14px] font-medium leading-relaxed">
                 Forged partnerships with MTN, Globacom, 9Mobile, Jaiz Bank,
-                WAEC, and AWS - building one of Nigeria&apos;s most connected
+                WAEC, and AWS building one of Nigeria&apos;s most connected
                 ecosystems.
               </p>
             </div>
@@ -340,7 +338,7 @@ export default function AboutPageClient() {
               <p className="text-gray-500 text-[14px] font-medium leading-relaxed">
                 Processing over ₦1 Trillion in transactions, 1.7 billion
                 transaction counts, and serving 33.6 million unique customer
-                interactions - with eyes firmly on Sub-Saharan Africa.
+                interactions with eyes firmly on Sub-Saharan Africa.
               </p>
             </div>
           </ScrollReveal>
@@ -359,7 +357,9 @@ export default function AboutPageClient() {
                 Nigeria&apos;s first developed locally core banking system
               </h3>
               <p className="text-gray-500 text-[14px] font-medium leading-relaxed">
-                Partnered with Ethica to launch Nigeria&apos;s first developed core banking system, delivering a secure and scalable banking platform.
+                Partnered with Ethica to launch Nigeria&apos;s first developed
+                core banking system, delivering a secure and scalable banking
+                platform.
               </p>
             </div>
             <div className="absolute top-[50%] -translate-y-1/2 left-[30px] md:left-1/2 w-5.5 h-5.5 bg-[#F5F6FA] rounded-full border-[5px] border-white -ml-6 md:-ml-[11px] z-20" />
@@ -379,10 +379,11 @@ export default function AboutPageClient() {
                 April 2026
               </span>
               <h3 className="text-[#1a1a1a] font-extrabold text-[16px] mb-1">
-             Launched flagship products
+                Launched flagship products
               </h3>
               <p className="text-gray-500 text-[14px] font-medium leading-relaxed">
-                Launched Liveliness, along with a portfolio of innovative digital solutions designed to enhance customer engagement and 
+                Launched Liveliness, along with a portfolio of innovative
+                digital solutions designed to enhance customer engagement and
               </p>
             </div>
           </ScrollReveal>
@@ -410,9 +411,7 @@ export default function AboutPageClient() {
               </p>
 
               <Button asChild variant="default" size="lg" className="mb-16">
-                <Link href="/book-demo">
-                  BOOK A DEMO
-                </Link>
+                <Link href="/book-demo">BOOK A DEMO</Link>
               </Button>
             </ScrollReveal>
           </div>

@@ -189,7 +189,7 @@ export default function Footer() {
                   href="tel:+2348022473198"
                   className="hover:text-white transition-colors"
                 >
-                  08022473198
+                  07037003054
                 </a>
               </li>
             </ul>
@@ -208,7 +208,7 @@ export default function Footer() {
                   width={90}
                   height={28}
                   className="h-6 lg:h-7 w-auto"
-                  style={{ width: 'auto', height: 'auto' }}
+                  style={{ width: "auto", height: "auto" }}
                 />
               </div>
               <span className="text-white font-semibold text-[13px] md:text-[15px]">

@@ -68,7 +68,7 @@ function ApplyPageContent() {
           variant="ghost"
           size="sm"
           onClick={() => router.back()}
-          className="text-[#5153A0] font-bold text-[14px] mb-10 hover:opacity-75 hover:bg-transparent transition-opacity p-0"
+          className="text-[#5153A0] font-medium text-[14px] mb-10 p-0"
         >
           <svg
             className="w-4 h-4 mr-1"
@@ -83,7 +83,7 @@ function ApplyPageContent() {
               d="M15 19l-7-7 7-7"
             />
           </svg>
-          back
+          Back
         </Button>
 
         {isSuccess ? (

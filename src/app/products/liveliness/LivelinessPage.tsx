@@ -60,9 +60,7 @@ export default function LivelinessPage() {
               size="lg"
               className="w-full sm:w-auto"
             >
-              <Link href="/book-demo?product=Liveliness">
-                Book A Demo
-              </Link>
+              <Link href="/book-demo?product=Liveliness">Book A Demo</Link>
             </Button>
             <Button
               asChild
@@ -70,9 +68,7 @@ export default function LivelinessPage() {
               size="lg"
               className="w-full sm:w-auto text-center"
             >
-              <a href="mailto:info@payvantage.com.ng?subject=Contact%20Sales">
-                Contact Sales
-              </a>
+              <a href="/book-demo">Contact Sales</a>
             </Button>
           </div>
         </ScrollReveal>
@@ -224,9 +220,7 @@ export default function LivelinessPage() {
               </p>
 
               <Button asChild variant="default" size="lg" className="mb-8">
-                <Link href="/book-demo?product=Liveliness">
-                  Book Your Demo
-                </Link>
+                <Link href="/book-demo?product=Liveliness">Book Your Demo</Link>
               </Button>
             </ScrollReveal>
           </div>

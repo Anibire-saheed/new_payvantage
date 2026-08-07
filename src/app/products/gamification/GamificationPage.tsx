@@ -57,9 +57,7 @@ export default function GamificationPage() {
               size="lg"
               className="w-full sm:w-auto"
             >
-              <Link href="/book-demo?product=Gamification">
-                Book A Demo
-              </Link>
+              <Link href="/book-demo?product=Gamification">Book A Demo</Link>
             </Button>
             <Button
               asChild
@@ -67,9 +65,7 @@ export default function GamificationPage() {
               size="lg"
               className="w-full sm:w-auto text-center"
             >
-              <a href="mailto:info@payvantage.com.ng?subject=Contact%20Sales">
-                Contact Sales
-              </a>
+              <a href="/book-demo">Contact Sales</a>
             </Button>
           </div>
         </ScrollReveal>
@@ -169,8 +165,8 @@ export default function GamificationPage() {
               </h2>
 
               <p className="text-black text-[13px] md:text-[14px] max-w-2xl mx-auto mb-6 font-bold px-4 md:px-0">
-                Let&apos;s get your business connected to every mobile network in
-                Nigeria
+                Let&apos;s get your business connected to every mobile network
+                in Nigeria
                 <br />
                 with zero carrier delays.
               </p>

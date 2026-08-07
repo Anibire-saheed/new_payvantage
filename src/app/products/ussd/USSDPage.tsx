@@ -60,9 +60,7 @@ export default function USSDPage() {
               size="lg"
               className="w-full sm:w-auto"
             >
-              <Link href="/book-demo?product=USSD%20Platform">
-                Book A Demo
-              </Link>
+              <Link href="/book-demo?product=USSD%20Platform">Book A Demo</Link>
             </Button>
             <Button
               asChild
@@ -101,8 +99,8 @@ export default function USSDPage() {
             Everything You Need To Deploy At Scale
           </h2>
           <p className="text-gray-600 font-medium text-[15px] max-w-xl">
-            A complete, end-to-end USSD infrastructure built for Nigerian
-            merchants and their customers.
+            An end-to-end USSD infrastructure built for merchants and their
+            customers
           </p>
         </ScrollReveal>
 
