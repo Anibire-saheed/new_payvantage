@@ -17,13 +17,7 @@ export const bookDemoFormSchema = z.object({
     .string()
     .trim()
     .min(1, { message: "Please select a product." }),
-  comment: z
-    .string()
-    .trim()
-    .min(1, { message: "Comment / requirements is required." })
-    .min(10, {
-      message: "Please provide more details (at least 10 characters).",
-    }),
+  comment: z.string().optional(),
 });
 
 export type BookDemoFormData = z.infer<typeof bookDemoFormSchema>;

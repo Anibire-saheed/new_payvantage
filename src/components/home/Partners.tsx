@@ -28,7 +28,7 @@ export default function Partners() {
     },
     {
       name: "ethica",
-      src: "/image/partners/EthicaLogo.svg",
+      src: "/image/partners/EthicaLogoMFB.png",
     },
     {
       name: "ZippyWorld",
@@ -58,8 +58,8 @@ export default function Partners() {
     <section className="pt-3 md:pt-16 pb-16 px-6 lg:px-12 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto text-center">
         <ScrollReveal>
-          <h3 className="text-[#374151] font-black mb-20 text-[18px]">
-            Our Trusted Partners
+          <h3 className="text-[#374151] font-black mb-16 text-[22px]">
+            Partners who trust us
           </h3>
         </ScrollReveal>
 

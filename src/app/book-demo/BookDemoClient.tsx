@@ -168,12 +168,12 @@ export default function BookDemoClient() {
             Book A Demo
           </span>
           <h1 className="text-2xl md:text-4xl font-extrabold text-[#2C2E6A] tracking-tight">
-            See How Easy Payment Integration Can Be
+            Everything Your Business Needs to Grow. All in One Platform.
           </h1>
           <p className="text-[12px] md:text-[16px] text-gray-600 max-w-2xl mx-auto">
-            Book a quick session with our product experts to discover flexible
-            payment solutions built to connect you with millions of banked and
-            unbanked customers.
+            Book a personalized demo to explore PayVantage’s payment,
+            verification, and business solutions tailored to your business
+            needs.
           </p>
         </ScrollReveal>
 
@@ -332,7 +332,9 @@ export default function BookDemoClient() {
                     className="block text-sm font-bold text-gray-700 mb-2"
                   >
                     Comment / Special Requirements{" "}
-                    <span className="text-red-500">*</span>
+                    <span className="text-gray-400 font-normal">
+                      (Optional)
+                    </span>
                   </label>
                   <textarea
                     id="comment"
