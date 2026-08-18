@@ -38,7 +38,7 @@ export default function VirtualAccountsPage() {
       </div>
 
       {/* Hero Section */}
-      <section className="pt-8 md:pt-12 lg:pt-16 pb-10 px-6 lg:px-12 max-w-7xl mx-auto w-full flex flex-col lg:flex-row items-center xl:justify-center gap-8 mb-8 md:mb-12 lg:mb-16">
+      <section className="pt-4 md:pt-6 lg:pt-8 pb-10 px-6 lg:px-12 max-w-7xl mx-auto w-full flex flex-col lg:flex-row items-center xl:justify-center gap-8 mb-8 md:mb-12 lg:mb-16">
         <ScrollReveal from="left" className="w-full lg:w-1/2 text-left">
           <span className="inline-block bg-[#5153A0] text-white px-6 py-3 border-b-[5px] border-gray-300 rounded-full text-[12px] font-bold mb-4">
             Virtual Account
@@ -46,7 +46,7 @@ export default function VirtualAccountsPage() {
           <h1 className="text-3xl md:text-[40px] lg:text-[40px] font-extrabold text-brand-primary leading-10 md:leading-13 mb-4">
             Banking-as-a-Service,
             <br />
-            plug and play
+            Plug and Play
           </h1>
           <p className="text-gray-600 font-medium text-[15px] mb-6 max-w-230 leading-relaxed">
             A plug-and-play Bank-as-a-Service solution that powers automated
@@ -70,7 +70,9 @@ export default function VirtualAccountsPage() {
               size="lg"
               className="w-full sm:w-auto text-center"
             >
-              <a href="/book-demo">Contact Sales</a>
+              <Link href="/contact-sales">
+                Contact Sales
+              </Link>
             </Button>
           </div>
         </ScrollReveal>
@@ -93,7 +95,7 @@ export default function VirtualAccountsPage() {
       </section>
 
       {/* Details Section */}
-      <section className="px-6 lg:px-12 max-w-7xl mx-auto w-full py-8">
+      <section className="px-6 lg:px-12 max-w-7xl mx-auto w-full ">
         <ScrollReveal className="mb-6">
           <h2 className="max-w-xl text-2xl md:text-[28px] lg:text-[40px] font-extrabold text-brand-primary mb-3">
             Automated Collections,
@@ -169,7 +171,7 @@ export default function VirtualAccountsPage() {
 
       {/* CTA Section */}
       <section className="mt-22">
-        <div className="relative pt-22 px-6 lg:pb-0 bg-linear-to-b from-[#3E409533] to-white overflow-hidden">
+        <div className="relative pt-16 px-6 lg:pb-0 bg-linear-to-b from-[#3E409533] to-white overflow-hidden">
           <div className="max-w-7xl mx-auto text-center ">
             <ScrollReveal>
               <div className="mb-4">

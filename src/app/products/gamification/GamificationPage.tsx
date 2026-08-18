@@ -65,7 +65,9 @@ export default function GamificationPage() {
               size="lg"
               className="w-full sm:w-auto text-center"
             >
-              <a href="/book-demo">Contact Sales</a>
+              <Link href="/contact-sales">
+                Contact Sales
+              </Link>
             </Button>
           </div>
         </ScrollReveal>

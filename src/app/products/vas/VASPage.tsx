@@ -38,7 +38,7 @@ export default function VASPage() {
       </div>
 
       {/* Hero Section */}
-      <section className="pt-8 md:pt-12 lg:pt-16 pb-10 px-6 lg:px-12 max-w-7xl mx-auto w-full flex flex-col lg:flex-row items-center xl:justify-center gap-8 mb-8 md:mb-12 lg:mb-16">
+      <section className="pt-4 md:pt-6 lg:pt-8 pb-10 px-6 lg:px-12 max-w-7xl mx-auto w-full flex flex-col lg:flex-row items-center xl:justify-center gap-8 mb-8 md:mb-12 lg:mb-16">
         <ScrollReveal from="left" className="w-full lg:w-1/2 text-left">
           <span className="inline-block bg-[#5153A0] text-white px-6 py-3 border-b-[5px] border-gray-300 rounded-full text-[12px] font-bold mb-4">
             VAS - Value Added Services
@@ -67,7 +67,7 @@ export default function VASPage() {
               size="lg"
               className="w-full sm:w-auto text-center"
             >
-              <a href="/book-demo">Contact Sales</a>
+              <Link href="/contact-sales">Contact Sales</Link>
             </Button>
           </div>
         </ScrollReveal>
@@ -90,13 +90,13 @@ export default function VASPage() {
       </section>
 
       {/* Details Section */}
-      <section className="px-6 lg:px-12 max-w-7xl mx-auto w-full py-8">
+      <section className="px-6 lg:px-12 max-w-7xl mx-auto w-full">
         <ScrollReveal className="mb-6">
           <h2 className="max-w-xl text-2xl md:text-[28px] lg:text-[40px] font-extrabold text-brand-primary mb-3">
             How It Works
           </h2>
           <p className="text-gray-600 font-medium text-[15px] max-w-xl">
-            Discover how VAS - Value Added Services can transform your business
+            Discover how VAS (Value Added Services) can transform your business
             operations.
           </p>
         </ScrollReveal>
@@ -108,18 +108,21 @@ export default function VASPage() {
               title: "Easy Integration",
               description:
                 "Seamlessly integrate our solution into your existing systems with minimal effort.",
+              icon: "/icons/support/integratn.svg",
             },
             {
               number: "02",
               title: "Scalable Infrastructure",
               description:
                 "Built to handle millions of transactions with reliable performance.",
+              icon: "/icons/support/scalable-infra.svg",
             },
             {
               number: "03",
               title: "24/7 Support",
               description:
                 "Dedicated support team available around the clock to assist you.",
+              icon: "/icons/support/support.svg",
             },
           ].map((item, index) => (
             <ScrollReveal
@@ -132,7 +135,15 @@ export default function VASPage() {
                 {/* Top section with icon and number */}
                 <div className="flex justify-between items-center w-full mb-6 relative z-10">
                   {/* Placeholder for small icon */}
-                  <div className="w-16 h-16 bg-gray-300 rounded-xl flex-shrink-0" />
+                  <div className="w-16 h-16 bg-gray-300 rounded-xl flex-shrink-0 flex items-center justify-center overflow-hidden">
+                    <Image
+                      src={item.icon}
+                      alt={item.title}
+                      width={24}
+                      height={24}
+                      className="w-6 h-6 object-contain [filter:invert(32%)_sepia(35%)_saturate(1175%)_hue-rotate(203deg)_brightness(94%)_contrast(91%)]"
+                    />
+                  </div>
 
                   {/* Number badge (top right) */}
                   <span className="text-[64px] font-extrabold text-gray-300 leading-none">
@@ -154,7 +165,7 @@ export default function VASPage() {
 
       {/* CTA Section */}
       <section className="mt-22">
-        <div className="relative pt-22 px-6 lg:pb-0 bg-linear-to-b from-[#3E409533] to-white overflow-hidden">
+        <div className="relative pt-16 px-6 lg:pb-0 bg-linear-to-b from-[#3E409533] to-white overflow-hidden">
           <div className="max-w-7xl mx-auto text-center ">
             <ScrollReveal>
               <div className="mb-4">

@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 export default function CTA() {
   return (
     <section>
-      <div className="relative pt-12 pb-0 px-6 lg:px-12 bg-linear-to-b from-[#3E409533] to-white overflow-hidden">
+      <div className="relative pt-6 pb-0 px-6 lg:px-12 bg-linear-to-b from-[#3E409533] to-white overflow-hidden">
         <div className="max-w-7xl mx-auto text-center ">
           <ScrollReveal>
             <div className="mb-8 mt-10">
@@ -25,9 +25,7 @@ export default function CTA() {
             </p>
 
             <Button asChild variant="default" size="lg" className="mb-10">
-              <Link href="/book-demo">
-               Book A Demo
-              </Link>
+              <Link href="/book-demo">Book A Demo</Link>
             </Button>
           </ScrollReveal>
         </div>

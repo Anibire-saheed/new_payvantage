@@ -76,7 +76,7 @@ export default function Hero() {
             size="lg"
             className="flex-1 sm:flex-initial"
           >
-            <a href="/book-demo">Contact Sales</a>
+            <Link href="/contact-sales">Contact Sales</Link>
           </Button>
         </div>
       </div>

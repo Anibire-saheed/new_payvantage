@@ -38,7 +38,7 @@ export default function USSDPage() {
       </div>
 
       {/* Hero Section */}
-      <section className="pt-8 md:pt-12 lg:pt-16 pb-10 px-6 lg:px-12 max-w-7xl mx-auto w-full flex flex-col lg:flex-row items-center xl:justify-center gap-8 mb-8 md:mb-12 lg:mb-16">
+      <section className="pt-4 md:pt-6 lg:pt-8 pb-10 px-6 lg:px-12 max-w-7xl mx-auto w-full flex flex-col lg:flex-row items-center xl:justify-center gap-8 mb-8 md:mb-12 lg:mb-16">
         <ScrollReveal from="left" className="w-full lg:w-1/2 text-left">
           <span className="inline-block bg-[#5153A0] text-white px-6 py-3 border-b-[5px] border-gray-300 rounded-full text-[12px] font-bold mb-4">
             USSD Platform
@@ -68,7 +68,7 @@ export default function USSDPage() {
               size="lg"
               className="w-full sm:w-auto text-center"
             >
-              <a href="/book-demo">Contact Sales</a>
+              <Link href="/contact-sales">Contact Sales</Link>
             </Button>
           </div>
         </ScrollReveal>
@@ -91,7 +91,7 @@ export default function USSDPage() {
       </section>
 
       {/* Details Section */}
-      <section className="px-6 lg:px-12 max-w-7xl mx-auto w-full py-8">
+      <section className="px-6 lg:px-12 max-w-7xl mx-auto w-full">
         <ScrollReveal className="mb-6">
           <h2 className="max-w-xl text-2xl md:text-[28px] lg:text-[40px] font-extrabold text-brand-primary mb-3">
             Everything You Need To Deploy At Scale
@@ -160,29 +160,17 @@ export default function USSDPage() {
                 "User-friendly, clean menu interface for end-customers to navigate services with zero friction.",
               icon: "/icons/ussd/Easy-to-Use USSD Menu.svg",
             },
+
             {
               number: "09",
-              title: "Offline Functionality",
-              description:
-                "Works even without internet data, ensuring reliable access in areas with poor connectivity.",
-              icon: "/icons/ussd/Offline Functionality.svg",
-            },
-            {
-              number: "10",
               title: "Smart Session Recovery",
               description:
                 "If a user's network drops mid-transaction, the system saves their progress so they can resume where they left off.",
               icon: "/icons/ussd/Smart Session Recovery.svg",
             },
+
             {
-              number: "11",
-              title: "Real-Time Analytics Dashboard",
-              description:
-                "Visual backend showing live session volume, drop-off rates, and transaction success rates.",
-              icon: "/icons/ussd/Real-Time Analytics Dashboard.svg",
-            },
-            {
-              number: "12",
+              number: "10",
               title: "Multi-Language Support",
               description:
                 "Easily translate your USSD menus into local languages like Hausa, Yoruba, Igbo, and Pidgin.",
@@ -228,7 +216,7 @@ export default function USSDPage() {
 
       {/* CTA Section */}
       <section className="mt-22">
-        <div className="relative pt-22 px-6 lg:pb-0 bg-linear-to-b from-[#3E409533] to-white overflow-hidden">
+        <div className="relative pt-16 px-6 lg:pb-0 bg-linear-to-b from-[#3E409533] to-white overflow-hidden">
           <div className="max-w-7xl mx-auto text-center ">
             <ScrollReveal>
               <div className="mb-4">

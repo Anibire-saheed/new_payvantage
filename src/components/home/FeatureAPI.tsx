@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 export default function FeatureAPI() {
   return (
-    <section className="py-14 px-6 lg:px-12 bg-white">
+    <section className="py-8 px-6 lg:px-12 bg-white">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-10">
         <ScrollReveal
           from="left"

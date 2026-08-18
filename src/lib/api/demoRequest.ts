@@ -1,5 +1,4 @@
 import api from "./axios";
-import { fetchProducts } from "./product";
 import type {
   DemoRequestPayload,
   DemoRequestResponse,
@@ -15,45 +14,27 @@ const ENDPOINTS = {
 export async function submitDemoRequest(
   payload: DemoRequestPayload,
 ): Promise<DemoRequestResponse> {
+  const phoneComment = payload.phoneNumber
+    ? `[Phone: ${payload.phoneNumber.trim()}]`
+    : null;
+  const commentText =
+    [payload.comment?.trim(), phoneComment].filter(Boolean).join(" | ") ||
+    "N/A";
+
   try {
-    let productId = payload.product;
-
-    // If payload.product is a title/name string rather than an ID, try to resolve to actual product ID
-    if (
-      productId &&
-      !/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(
-        productId,
-      )
-    ) {
-      const products = await fetchProducts();
-      const matched = products.find((p) => {
-        const nameStr = typeof p.name === "string" ? p.name : "";
-        const titleStr = typeof p.title === "string" ? p.title : "";
-        const idStr = String(p.id);
-        return (
-          idStr.toLowerCase() === productId.toLowerCase() ||
-          (nameStr && nameStr.toLowerCase() === productId.toLowerCase()) ||
-          (titleStr && titleStr.toLowerCase() === productId.toLowerCase())
-        );
-      });
-      if (matched && matched.id) {
-        productId = String(matched.id);
-      }
-    }
-
-    const postPayload: Record<string, unknown> = {
-      name: payload.name,
-      email: payload.email,
-      productId: productId,
+    const body: Record<string, unknown> = {
+      name: payload.name.trim(),
+      email: payload.email.trim(),
+      productId: payload.product,
+      comment: commentText,
     };
-
-    if (payload.comment) {
-      postPayload.comment = payload.comment;
+    if (payload.phoneNumber) {
+      body.phoneNumber = payload.phoneNumber.trim();
     }
 
     const { data } = await api.post<DemoRequestResponse>(
       ENDPOINTS.DEMO_REQUESTS,
-      postPayload,
+      body,
     );
 
     return data;

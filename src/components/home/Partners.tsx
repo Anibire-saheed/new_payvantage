@@ -55,7 +55,7 @@ export default function Partners() {
   const partnersToScroll = [...topRow, ...topRow];
 
   return (
-    <section className="pt-3 md:pt-16 pb-16 px-6 lg:px-12 bg-white overflow-hidden">
+    <section className="pt-3 md:pt-8 pb-16 px-6 lg:px-12 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto text-center">
         <ScrollReveal>
           <h3 className="text-[#374151] font-black mb-16 text-[22px]">

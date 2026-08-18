@@ -1,6 +1,7 @@
 export interface DemoRequestPayload {
   name: string;
   email: string;
+  phoneNumber?: string;
   product: string;
   comment?: string;
 }

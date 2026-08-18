@@ -40,10 +40,9 @@ function StatItem({
           <Image
             src={icon}
             alt="icon"
-            width={19}
-            height={22}
-            className="lg:w-5 md:w-3.25 w-4.25 mr-1"
-            style={{ height: "auto" }}
+            width={32}
+            height={32}
+            className="w-6.5 h-6.5 md:w-5 md:h-5 lg:w-8 lg:h-8 mr-1.5 inline-block object-contain"
           />
         )}
         <span ref={countUpRef} />
@@ -58,9 +57,9 @@ function StatItem({
 export default function Stats() {
   const stats = [
     {
-      value: "780+ Million",
+      value: "1.1+ Trillion",
       label: "Processed Transactions Value",
-      icon: "/image/dollar.svg",
+      icon: "/image/Naira.png",
     },
     {
       value: "1.94+ Billion",
@@ -73,7 +72,7 @@ export default function Stats() {
   ];
 
   return (
-    <section className="py-12 w-full max-w-360 mx-auto bg-white px-6">
+    <section className=" w-full max-w-360 mx-auto bg-white px-6">
       <div className="flex flex-col md:flex-row justify-between items-center w-full relative">
         {stats.map((stat, index) => (
           <React.Fragment key={index}>

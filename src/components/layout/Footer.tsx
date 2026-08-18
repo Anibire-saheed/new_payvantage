@@ -102,6 +102,22 @@ export default function Footer() {
                   loading="eager"
                 />
               </a>
+              <a
+                href="https://wa.me/2347037003054"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                className="flex items-center justify-center"
+              >
+                <Image
+                  src="/image/logos/whatsapp.svg"
+                  alt=""
+                  width={24}
+                  height={24}
+                  className="w-6 h-6 object-contain"
+                  loading="eager"
+                />
+              </a>
             </div>
           </ScrollReveal>
 
@@ -127,6 +143,14 @@ export default function Footer() {
                     className="hover:text-white transition-colors"
                   >
                     Careers
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/contact-sales"
+                    className="hover:text-white transition-colors"
+                  >
+                    Contact Sales
                   </Link>
                 </li>
                 <li>

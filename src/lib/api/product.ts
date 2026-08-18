@@ -11,17 +11,40 @@ const ENDPOINTS = {
  */
 export async function fetchProducts(): Promise<Product[]> {
   try {
-    const { data } = await api.get<{
+    const response = await api.get<{
       statusCode?: number;
       message?: string;
-      data: Product[];
+      data?: Product[] | { data?: Product[]; items?: Product[]; products?: Product[] };
+      items?: Product[];
+      products?: Product[];
     }>(ENDPOINTS.PRODUCTS);
 
-    if (Array.isArray(data)) {
-      return data;
+    const resData = response.data;
+
+    if (Array.isArray(resData)) {
+      return resData;
     }
 
-    return data?.data || [];
+    if (Array.isArray(resData?.data)) {
+      return resData.data;
+    }
+
+    if (typeof resData?.data === "object" && resData?.data !== null) {
+      const nested = resData.data as { data?: Product[]; items?: Product[]; products?: Product[] };
+      if (Array.isArray(nested?.data)) return nested.data;
+      if (Array.isArray(nested?.items)) return nested.items;
+      if (Array.isArray(nested?.products)) return nested.products;
+    }
+
+    if (Array.isArray(resData?.items)) {
+      return resData.items;
+    }
+
+    if (Array.isArray(resData?.products)) {
+      return resData.products;
+    }
+
+    return [];
   } catch (error) {
     console.error("Failed to fetch products:", error);
     return [];

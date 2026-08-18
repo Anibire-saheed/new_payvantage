@@ -18,7 +18,7 @@ export default function AboutPageClient() {
   return (
     <main className="flex min-h-screen flex-col bg-white overflow-hidden">
       {/* Hero Section */}
-      <section className="pt-16 md:pt-24 lg:pt-28 pb-10 px-6 lg:px-12 max-w-7xl mx-auto w-full flex flex-col lg:flex-row items-center xl:justify-center gap-8 mb-16 md:mb-24 lg:mb-32">
+      <section className="pt-8 md:pt-12 lg:pt-16 pb-4 px-6 lg:px-12 max-w-7xl mx-auto w-full flex flex-col lg:flex-row items-center xl:justify-center gap-8 mb-16 md:mb-24 lg:mb-32">
         <ScrollReveal from="left" className="w-full lg:w-1/2 text-left">
           <span className="inline-block bg-[#5153A0] text-white px-8 py-4 border-b-[5px] border-gray-300 rounded-full text-[12px] font-bold mb-6">
             Our Story
@@ -74,7 +74,7 @@ export default function AboutPageClient() {
       {/* Built To Solve A Real Problem */}
       <section
         id="our-story"
-        className="px-6 lg:px-12 max-w-7xl mx-auto w-full flex flex-col lg:flex-row gap-12 items-start mt-6"
+        className="px-6 lg:px-12 max-w-7xl mx-auto w-full flex flex-col lg:flex-row gap-12 items-start "
       >
         <ScrollReveal from="left" className="w-full lg:w-[45%]">
           <span className="inline-block bg-[#5153A0] text-white px-8 py-4 border-b-[5px] border-gray-300 rounded-full text-[12px] font-bold mb-6">
@@ -187,7 +187,7 @@ export default function AboutPageClient() {
               icon: "/image/about/about_1.svg",
               tag: "Our Values",
               title: "Values We Live By",
-              body: "TFairness, Innovation, Integrity and Excellence are values that drive us towards delivering customer centric platforms.",
+              body: "Fairness, Innovation, Integrity and Excellence are values that drive us towards delivering customer centric platforms.",
               extra:
                 "md:col-span-2 md:w-[calc(50%-12px)] md:mx-auto lg:col-span-1 lg:w-full lg:mx-0",
             },
@@ -224,12 +224,12 @@ export default function AboutPageClient() {
       </section>
 
       {/* Stats */}
-      <div className="pt-2 pb-16 bg-white">
+      <div className="pt-2 pb-10 bg-white">
         <Stats />
       </div>
 
       {/* Milestones */}
-      <section className="py-16 px-6 lg:px-12 w-full bg-[#F5F6FA]">
+      <section className="py-14 px-6 lg:px-12 w-full bg-[#F5F6FA]">
         <ScrollReveal className="max-w-3xl mx-auto text-center mb-12">
           <span className="inline-block bg-[#5153A0] text-white px-8 py-4 border-b-[5px] border-gray-300 rounded-full text-[12px] font-bold mb-6">
             Our Journey
@@ -238,7 +238,7 @@ export default function AboutPageClient() {
             Milestones That Shaped Us
           </h2>
           <p className="text-[#1a1a1a] font-bold text-[15px]">
-            From an idea to a trusted payment infrastructure. here&apos;s how
+            From an idea to a trusted payment infrastructure. Here&apos;s how
             Payvantage grew.
           </p>
         </ScrollReveal>
@@ -311,7 +311,7 @@ export default function AboutPageClient() {
               </h3>
               <p className="text-gray-500 text-[14px] font-medium leading-relaxed">
                 Forged partnerships with MTN, Globacom, 9Mobile, Jaiz Bank,
-                WAEC, and AWS building one of Nigeria&apos;s most connected
+                WAEC, and AWS, building one of Nigeria&apos;s most connected
                 ecosystems.
               </p>
             </div>
@@ -392,7 +392,7 @@ export default function AboutPageClient() {
 
       {/* CTA */}
       <section>
-        <div className="relative pt-20 pb-0 px-6 lg:px-12 bg-linear-to-b from-[#3E409533] to-white overflow-hidden">
+        <div className="relative pt-16 pb-0 px-6 lg:px-12 bg-linear-to-b from-[#3E409533] to-white overflow-hidden">
           <div className="max-w-7xl mx-auto text-center ">
             <ScrollReveal>
               <div className="mb-8">
