@@ -15,7 +15,7 @@ export default function OurProductPage() {
             Our Products and Services
           </span>
           <h2 className="text-2xl md:text-[28px] lg:text-[32px] font-extrabold text-brand-primary leading-tight mb-4 px-2 lg:px-0">
-            Build For The Future Of Digital <br className="hidden md:block" />{" "}
+            Built For The Future Of Digital <br className="hidden md:block" />{" "}
             Payments.
           </h2>
           <p className="text-black max-w-xl text-[13px] md:text-[14px] font-bold px-2 lg:px-0 pb-0 lg:pb-5">
