@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Schibsted_Grotesk } from "next/font/google";
+import { Schibsted_Grotesk, Montserrat } from "next/font/google";
 
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
@@ -8,6 +8,11 @@ import Providers from "@/components/layout/Providers";
 
 const schibstedGrotesk = Schibsted_Grotesk({
   variable: "--font-schibsted-grotesk",
+  subsets: ["latin"],
+});
+
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
   subsets: ["latin"],
 });
 
@@ -40,7 +45,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${schibstedGrotesk.variable} h-full antialiased overflow-x-hidden`}
+      className={`${schibstedGrotesk.variable} ${montserrat.variable} h-full antialiased overflow-x-hidden`}
     >
       <head>
         <script

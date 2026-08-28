@@ -9,6 +9,7 @@
   --var-destructive: var(--color-destructive);
 
   --font-sans: var(--font-schibsted-grotesk);
+  --font-montserrat: var(--font-montserrat-source);
 
   --animate-float: float 3.5s ease-in-out infinite;
   --animate-fade-up: fade-up 0.65s ease-out both;

@@ -1,8 +1,8 @@
 "use client";
 
 import _ from "lodash";
-import React, { Suspense } from "react";
-import { usePathname, useRouter } from "next/navigation";
+import React from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -23,26 +23,33 @@ import {
   type JobApplicationFormData,
 } from "./validation";
 
-function ApplyPageContent() {
+export default function ApplyPageClient() {
   const router = useRouter();
-  const pathname = usePathname();
-  const jobId = pathname.split("/").pop() ?? "";
+  const searchParams = useSearchParams();
+  const jobId = searchParams.get("jobId") || "";
 
   const form = useForm<JobApplicationFormData>({
     resolver: zodResolver(jobApplicationFormSchema),
     defaultValues: { fullName: "", phone: "", email: "" },
   });
 
-  const { data: jobData, isLoading: isJobLoading } = useQuery({
+  const {
+    data: jobData,
+    isLoading: isJobLoading,
+    isError: isJobFetchError,
+  } = useQuery({
     queryKey: ["job", jobId],
     queryFn: () => fetchJobById(jobId),
     enabled: Boolean(jobId),
     staleTime: 5 * 60 * 1000,
   });
 
-  console.log(jobData);
-
-  const { mutate, isPending, isSuccess, isError } = useMutation({
+  const {
+    mutate,
+    isPending: isSubmitting,
+    isSuccess,
+    isError: isSubmitError,
+  } = useMutation({
     mutationFn: (data: JobApplicationFormData) => applyForJob(jobId, data),
     onSuccess: () => {
       form.reset();
@@ -50,25 +57,28 @@ function ApplyPageContent() {
   });
 
   const onSubmit = async (data: JobApplicationFormData) => {
-    if (!_.isEmpty(form.formState.errors)) {
+    if (!_.isEmpty(form.formState.errors) || !jobId) {
       return;
     }
 
     mutate(data);
   };
 
-  const jobTitle = jobData?.title ?? "";
+  const jobNotFound =
+    !jobId ||
+    isJobFetchError ||
+    (!isJobLoading && jobData && jobData.title === "Job Not Found");
 
   return (
     <main className="min-h-screen bg-white py-12 px-6 lg:px-12">
-      {/* Back link */}
       <div className="max-w-2xl mx-auto">
+        {/* Back Link */}
         <Button
           type="button"
           variant="ghost"
           size="sm"
-          onClick={() => router.back()}
-          className="text-[#5153A0] font-medium text-[14px] mb-10 p-0"
+          onClick={() => router.push("/careers")}
+          className="text-[#5153A0] font-medium text-[14px] mb-8 p-0 hover:bg-transparent"
         >
           <svg
             className="w-4 h-4 mr-1"
@@ -83,11 +93,53 @@ function ApplyPageContent() {
               d="M15 19l-7-7 7-7"
             />
           </svg>
-          Back
+          Back to Careers
         </Button>
 
-        {isSuccess ? (
-          <div className="flex flex-col items-center justify-center py-20 text-center">
+        {isJobLoading ? (
+          <div className="space-y-6">
+            <div className="space-y-3">
+              <div className="h-8 bg-gray-100 rounded animate-pulse w-2/3" />
+              <div className="h-4 bg-gray-100 rounded animate-pulse w-full" />
+              <div className="h-4 bg-gray-100 rounded animate-pulse w-5/6" />
+            </div>
+            <div className="h-64 bg-gray-50 rounded-lg animate-pulse" />
+          </div>
+        ) : jobNotFound ? (
+          <div className="text-center py-16 bg-[#F8F9FA] rounded-xl p-8 border border-gray-100">
+            <div className="w-14 h-14 bg-gray-100 text-gray-400 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg
+                className="w-7 h-7"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+            </div>
+            <h2 className="text-[22px] font-extrabold text-[#1a1a1a] mb-2">
+              Job Not Found
+            </h2>
+            <p className="text-gray-500 text-[14px] mb-6 max-w-md mx-auto">
+              We couldn&apos;t find the job role you&apos;re looking for. It may
+              have expired or been removed.
+            </p>
+            <Button
+              type="button"
+              onClick={() => router.push("/careers")}
+              variant="default"
+              size="lg"
+            >
+              Browse Open Roles
+            </Button>
+          </div>
+        ) : isSuccess ? (
+          <div className="flex flex-col items-center justify-center py-16 text-center">
             <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4">
               <svg
                 className="w-8 h-8 text-green-600"
@@ -106,9 +158,9 @@ function ApplyPageContent() {
             <h2 className="text-[24px] font-extrabold text-[#000000] mb-2">
               Application Submitted!
             </h2>
-            <p className="text-gray-500 text-[14px] mb-8">
-              Thanks for applying for the <strong>{jobTitle}</strong> position.
-              We&apos;ll review your application and be in touch soon.
+            <p className="text-gray-500 text-[14px] mb-8 max-w-md">
+              Thanks for applying for the <strong>{jobData?.title}</strong>{" "}
+              position. We&apos;ll review your application and be in touch soon.
             </p>
             <Button
               type="button"
@@ -121,42 +173,38 @@ function ApplyPageContent() {
           </div>
         ) : (
           <>
-            {/* Job details */}
+            {/* Job Header & Description */}
             <div className="mb-10">
-              {isJobLoading ? (
-                <div className="space-y-3">
-                  <div className="h-8 bg-gray-100 rounded animate-pulse w-2/3" />
-                  <div className="h-4 bg-gray-100 rounded animate-pulse w-full" />
-                  <div className="h-4 bg-gray-100 rounded animate-pulse w-5/6" />
-                </div>
-              ) : (
-                <>
-                  <h1 className="text-[28px] lg:text-[32px] font-black text-brand-primary mb-4">
-                    {jobTitle}
-                  </h1>
-                  <div
-                    className="text-[#1a1a1a] text-[15px] font-medium leading-[1.6] opacity-90 prose prose-sm max-w-none"
-                    dangerouslySetInnerHTML={{
-                      __html: jobData?.description ?? "",
-                    }}
-                  />
-                </>
+              <h1 className="text-[28px] lg:text-[32px] font-black text-brand-primary mb-4">
+                {jobData?.title}
+              </h1>
+              {jobData?.type && (
+                <span className="inline-block bg-gray-100 text-gray-700 text-xs font-semibold px-3 py-1 rounded-full mb-4">
+                  {jobData.type}
+                </span>
               )}
+              <div
+                className="text-[#1a1a1a] text-[15px] font-medium leading-[1.6] opacity-90 prose prose-sm max-w-none mt-2"
+                dangerouslySetInnerHTML={{
+                  __html: jobData?.description ?? "",
+                }}
+              />
             </div>
 
-            <h2 className="text-[20px] font-extrabold text-[#000000] mb-8">
+            <h2 className="text-[20px] font-extrabold text-[#000000] mb-6">
               Apply for this role
             </h2>
 
-            {isError && (
+            {isSubmitError && (
               <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg text-red-700 text-[13px] font-medium">
-                Something went wrong. Please try again.
+                Something went wrong submitting your application. Please try
+                again.
               </div>
             )}
 
             <Form {...form}>
               <form
-                className="space-y-6 "
+                className="space-y-6"
                 onSubmit={form.handleSubmit(onSubmit)}
               >
                 <FormField
@@ -204,7 +252,6 @@ function ApplyPageContent() {
                 </div>
 
                 {/* CV Upload */}
-
                 <FormField
                   control={form.control}
                   name="cv"
@@ -223,7 +270,7 @@ function ApplyPageContent() {
                             accept=".pdf"
                             ref={ref}
                             onChange={(e) => onChange(e.target.files?.[0])}
-                            className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10 "
+                            className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
                             {...rest}
                           />
                         </FormControl>
@@ -257,12 +304,12 @@ function ApplyPageContent() {
                 <div className="pt-4">
                   <Button
                     type="submit"
-                    disabled={isPending}
+                    disabled={isSubmitting}
                     variant="default"
                     size="lg"
                     className="w-full"
                   >
-                    {isPending ? "Submitting…" : "Submit Application"}
+                    {isSubmitting ? "Submitting…" : "Submit Application"}
                   </Button>
                 </div>
               </form>
@@ -271,13 +318,5 @@ function ApplyPageContent() {
         )}
       </div>
     </main>
-  );
-}
-
-export default function ApplyPage() {
-  return (
-    <Suspense fallback={null}>
-      <ApplyPageContent />
-    </Suspense>
   );
 }

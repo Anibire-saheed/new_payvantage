@@ -3,9 +3,7 @@ import type { Metadata } from "next";
 import BookDemoClient from "./BookDemoClient";
 
 export const metadata: Metadata = {
-  title: "Book a Demo",
-  description:
-    "Schedule a live product demo with Payvantage. Discover how our payment solutions can transform your business.",
+  title: "BookaDemo",
 };
 
 export default function BookDemoPage() {

@@ -115,7 +115,9 @@ export default function CareersPageClient() {
 
                     <Button
                       type="button"
-                      onClick={() => router.push(`/careers/apply/${job.id}`)}
+                      onClick={() =>
+                        router.push(`/careers/apply?jobId=${job.id}`)
+                      }
                       variant="secondary"
                       size="sm"
                     >

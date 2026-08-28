@@ -59,9 +59,9 @@ export default function AboutPageClient() {
           delay={150}
           className="w-full lg:w-1/2 mt-8 lg:mt-10"
         >
-          <div className="rounded-xl w-full h-55 sm:h-70 md:h-87.5 relative overflow-hidden mix-blend-multiply">
+          <div className="rounded-xl w-full h-65 sm:h-70 md:h-97.5 relative overflow-hidden mix-blend-multiply">
             <Image
-              src="/image/Group_Pic.svg"
+              src="/image/about/AboutheroImage.svg"
               alt="Payvantage Team"
               fill
               className="object-cover object-top"
@@ -85,8 +85,8 @@ export default function AboutPageClient() {
           </h2>
           <div className="space-y-6 text-black font-medium text-[16px] leading-relaxed">
             <p className="font-semibold text-[#000000] border-l-4 border-brand-logo text-[16px] pl-4 py-1 italic">
-              We set out to provide and enable payment for emerging customers,
-              addressing their pain points head-on.
+              "We set out to provide and enable payment for emerging customers,
+              addressing their pain points head-on."
             </p>
             <p>
               We understand that to deliver value continuously, we must address
@@ -229,7 +229,7 @@ export default function AboutPageClient() {
       </div>
 
       {/* Milestones */}
-      <section className="py-14 px-6 lg:px-12 w-full bg-[#F5F6FA]">
+      <section className="py-14 px-6 lg:px-12 w-full bg-linear-to-b from-[#3E409533] to-white">
         <ScrollReveal className="max-w-3xl mx-auto text-center mb-12">
           <span className="inline-block bg-[#5153A0] text-white px-8 py-4 border-b-[5px] border-gray-300 rounded-full text-[12px] font-bold mb-6">
             Our Journey
@@ -388,38 +388,36 @@ export default function AboutPageClient() {
             </div>
           </ScrollReveal>
         </div>
+        <div className="max-w-7xl mx-auto text-center ">
+          <ScrollReveal>
+            <div className="mb-8 mt-22 md:mt-28">
+              <span className="inline-block bg-[#5153A0] text-white px-8 py-3 md:py-5 border-b-5 border-gray-300 rounded-full text-[12px] font-bold">
+                Get Started
+              </span>
+            </div>
+
+            <h2 className="text-2xl md:text-[28px] lg:text-[32px] font-extrabold text-brand-primary mb-4 md:mb-6">
+              Book A Demo Now
+            </h2>
+
+            <p className="text-black text-[13px] md:text-[14px] max-w-2xl mx-auto mb-10 font-bold px-4 md:px-0">
+              Lets demonstrate how we can add value to your company with our{" "}
+              <br className="hidden md:block" /> suite of payment solutions.
+            </p>
+
+            <Button asChild variant="default" size="lg" className="mb-8">
+              <Link href="/book-demo">BOOK A DEMO</Link>
+            </Button>
+          </ScrollReveal>
+        </div>
       </section>
 
       {/* CTA */}
       <section>
-        <div className="relative pt-16 pb-0 px-6 lg:px-12 bg-linear-to-b from-[#3E409533] to-white overflow-hidden">
-          <div className="max-w-7xl mx-auto text-center ">
-            <ScrollReveal>
-              <div className="mb-8">
-                <span className="inline-block bg-[#5153A0] text-white px-8 py-3 md:py-5 border-b-5 border-gray-300 rounded-full text-[12px] font-bold">
-                  Get Started
-                </span>
-              </div>
-
-              <h2 className="text-2xl md:text-[28px] lg:text-[32px] font-extrabold text-brand-primary mb-4 md:mb-6">
-                Book A Demo Now
-              </h2>
-
-              <p className="text-black text-[13px] md:text-[14px] max-w-2xl mx-auto mb-10 font-bold px-4 md:px-0">
-                Lets demonstrate how we can add value to your company with our{" "}
-                <br className="hidden md:block" /> suite of payment solutions.
-              </p>
-
-              <Button asChild variant="default" size="lg" className="mb-16">
-                <Link href="/book-demo">BOOK A DEMO</Link>
-              </Button>
-            </ScrollReveal>
-          </div>
-        </div>
         <ScrollReveal
           from="none"
           delay={200}
-          className="relative w-full max-w-360 mx-auto aspect-4/1 md:aspect-[4.2/1] overflow-hidden mt-10"
+          className="relative w-full max-w-360 mx-auto aspect-4/1 md:aspect-[4.2/1] overflow-hidden"
         >
           <Image
             src="/image/Group_Pic.svg"

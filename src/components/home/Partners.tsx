@@ -6,22 +6,10 @@ import { motion } from "motion/react";
 
 export default function Partners() {
   const topRow = [
-    {
-      name: "Habari",
-      src: "/image/partners/habaripay.svg",
-    },
-    {
-      name: "MTN",
-      src: "/image/partners/mtn.png",
-    },
-    {
-      name: "AWS",
-      src: "/image/partners/aws.png",
-    },
-    {
-      name: "Jaiz",
-      src: "/image/partners/Jaiz.png",
-    },
+    { name: "Habari", src: "/image/partners/habaripay.svg" },
+    { name: "MTN", src: "/image/partners/mtn.png" },
+    { name: "AWS", src: "/image/partners/aws.png" },
+    { name: "Jaiz", src: "/image/partners/Jaiz.png" },
     {
       name: "CreditSwitch",
       src: "/image/partners/creditswitch.png",
@@ -34,25 +22,11 @@ export default function Partners() {
       name: "ZippyWorld",
       src: "/image/partners/zippylogo.svg",
     },
-    {
-      name: "Waec",
-      src: "/image/partners/waec.svg",
-    },
-    {
-      name: "Jamb",
-      src: "/image/partners/jamb.svg",
-    },
-    {
-      name: "T2",
-      src: "/image/partners/t2.svg",
-    },
-    {
-      name: "Glo",
-      src: "/image/partners/glo.svg",
-    },
+    { name: "Waec", src: "/image/partners/waec.svg" },
+    { name: "Jamb", src: "/image/partners/jamb.svg" },
+    { name: "T2", src: "/image/partners/t2.svg" },
+    { name: "Glo", src: "/image/partners/glo.svg" },
   ];
-
-  const partnersToScroll = [...topRow, ...topRow];
 
   return (
     <section className="pt-3 md:pt-8 pb-16 px-6 lg:px-12 bg-white overflow-hidden">
@@ -65,7 +39,7 @@ export default function Partners() {
 
         <div className="relative w-full overflow-hidden">
           <motion.div
-            className="flex items-center gap-16"
+            className="flex w-max"
             animate={{
               x: ["0%", "-50%"],
             }}
@@ -73,25 +47,49 @@ export default function Partners() {
               x: {
                 repeat: Infinity,
                 repeatType: "loop",
-                duration: 30,
+                duration: 20,
                 ease: "linear",
               },
             }}
           >
-            {partnersToScroll.map((partner, index) => (
-              <div
-                key={`${partner.name}-${index}`}
-                className="flex items-center justify-center grayscale hover:grayscale-0 transition-all cursor-pointer min-w-fit"
-              >
-                <Image
-                  src={partner.src}
-                  alt={partner.name}
-                  width={100}
-                  height={100}
-                  className={`w-auto h-15 object-contain`}
-                />
-              </div>
-            ))}
+            {/* First copy */}
+            <div className="flex items-center gap-16 pr-16 shrink-0">
+              {topRow.map((partner, index) => (
+                <div
+                  key={`${partner.name}-${index}`}
+                  className="flex items-center justify-center grayscale hover:grayscale-0 transition-all cursor-pointer shrink-0"
+                >
+                  <Image
+                    src={partner.src}
+                    alt={partner.name}
+                    width={100}
+                    height={100}
+                    className="w-auto h-15 object-contain"
+                  />
+                </div>
+              ))}
+            </div>
+
+            {/* Second copy */}
+            <div
+              className="flex items-center gap-16 pr-16 shrink-0"
+              aria-hidden="true"
+            >
+              {topRow.map((partner, index) => (
+                <div
+                  key={`duplicate-${partner.name}-${index}`}
+                  className="flex items-center justify-center grayscale hover:grayscale-0 transition-all cursor-pointer shrink-0"
+                >
+                  <Image
+                    src={partner.src}
+                    alt=""
+                    width={100}
+                    height={100}
+                    className="w-auto h-15 object-contain"
+                  />
+                </div>
+              ))}
+            </div>
           </motion.div>
         </div>
       </div>
