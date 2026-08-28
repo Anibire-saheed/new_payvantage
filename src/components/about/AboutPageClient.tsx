@@ -85,8 +85,8 @@ export default function AboutPageClient() {
           </h2>
           <div className="space-y-6 text-black font-medium text-[16px] leading-relaxed">
             <p className="font-semibold text-[#000000] border-l-4 border-brand-logo text-[16px] pl-4 py-1 italic">
-              "We set out to provide and enable payment for emerging customers,
-              addressing their pain points head-on."
+              &ldquo;We set out to provide and enable payment for emerging
+              customers, addressing their pain points head-on.&rdquo;
             </p>
             <p>
               We understand that to deliver value continuously, we must address
@@ -238,7 +238,7 @@ export default function AboutPageClient() {
             Milestones That Shaped Us
           </h2>
           <p className="text-[#1a1a1a] font-bold text-[15px]">
-            From an idea to a trusted payment infrastructure. Here&apos;s how
+            From an idea to a trusted payment infrastructure. Here &apos;s how
             Payvantage grew.
           </p>
         </ScrollReveal>
@@ -262,7 +262,7 @@ export default function AboutPageClient() {
               </h3>
               <p className="text-gray-500 text-[14px] font-medium leading-relaxed">
                 Founded with a clear mission: To bridge the payment gap for
-                Nigeria&apos;s emerging digital economy and reach the unbanked
+                Nigeria &apos;s emerging digital economy and reach the unbanked
                 through mobile channels.
               </p>
             </div>
