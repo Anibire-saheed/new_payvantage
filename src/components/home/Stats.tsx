@@ -45,7 +45,7 @@ function StatItem({
 
   return (
     <div className="flex flex-col items-center justify-center p-12 md:p-6 lg:p-18 w-full text-center">
-      <h2 className="text-3xl md:text-[22px] lg:text-[32px] font-extrabold flex flex-wrap justify-center items-center mb-3 lg:mb-4 text-brand-primary">
+      <h2 className=" text-[26px] sm:text-3xl md:text-[22px] lg:text-[32px] font-extrabold flex flex-wrap justify-center items-center mb-3 lg:mb-4 text-brand-primary">
         {prefix && (
           <span className="mr-1 text-[#FFA500] font-montserrat font-bold">
             {prefix}

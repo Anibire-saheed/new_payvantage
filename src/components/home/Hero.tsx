@@ -20,7 +20,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative w-full flex flex-col overflow-hidden h-[calc(90vh-55px)] lg:h-[calc(100vh-90px)]">
+    <section className="relative w-full flex flex-col overflow-hidden h-[calc(70vh-55px)] sm:h-[calc(70vh-125px)] lg:h-[calc(100vh-90px)]">
       {/* Hero Background Video */}
       <video
         ref={videoRef}
@@ -44,29 +44,29 @@ export default function Hero() {
 
       {/* Hero Content */}
       <div className="w-full mt-0 sm:mt-4 md:mt-20">
-        <div className="relative z-10 mt-26 sm:mt-0 md:flex-1 flex flex-col items-center justify-center px-6 text-center max-w-5xl mx-auto py-1 lg:py-6 lg:mb-10">
+        <div className="relative z-10 mt-16 sm:mt-0 lg:mt-12 md:flex-1 flex flex-col items-center justify-center px-6 text-center max-w-5xl mx-auto py-1 lg:py-6 lg:mb-10">
           <div
-            className="mb-4 md:mb-12 inline-flex items-center space-x-2 sm:space-x-3 bg-[#5153A0] backdrop-blur-md px-8 py-5 sm:px-5 sm:py-3.75 rounded-full scale-90 sm:scale-100 animate-fade-in anim-delay-0"
+            className="mb-4 md:mb-12 inline-flex items-center space-x-2 sm:space-x-3 bg-[#5153A0] backdrop-blur-md px-5 py-4 sm:px-5 sm:py-3.75 rounded-full scale-90 sm:scale-100 animate-fade-in anim-delay-0"
             style={{
               borderBottom: "5px solid rgba(40, 42, 120, 0.60)",
             }}
           >
-            <span className="text-white text-[16px] sm:text-xs">✦</span>
+            <span className="text-white text-[14px] sm:text-xs">✦</span>
 
-            <span className="text-white text-[12px] sm:text-[16px] sm:text-xs font-bold tracking-wide">
+            <span className="text-white text-[11px] sm:text-[16px] sm:text-xs font-bold tracking-wide">
               Trusted Payment Infrastructure
             </span>
 
-            <span className="text-white text-[16px] sm:text-xs">✦</span>
+            <span className="text-white text-[14px] sm:text-xs">✦</span>
           </div>
 
-          <h1 className="text-3xl md:text-[36px] lg:text-[40px] font-extrabold text-white leading-tight lg:leading-[1.15] mb-6 max-w-4xl px-2 sm:px-0 animate-fade-up anim-delay-150">
+          <h1 className="text-[20px] sm:text-[28px] md:text-[36px] lg:text-[40px] font-extrabold text-white leading-tight lg:leading-[1.15] mb-6 max-w-4xl px-2 sm:px-0 animate-fade-up anim-delay-150">
             Secure Payments For Everyone, Enabling Seamless Transactions{" "}
             <br className="hidden md:block" />
             Anywhere.
           </h1>
 
-          <p className="text-gray-100 text-[15px] sm:text-base md:text-[18px] max-w-3xl mx-auto mb-10 leading-relaxed px-4 sm:px-0 font-medium animate-fade-up anim-delay-300">
+          <p className="text-gray-100 text-[12px] sm:text-base md:text-[18px] max-w-3xl mx-auto mb-10 leading-relaxed px-4 sm:px-0 font-medium animate-fade-up anim-delay-300">
             We offer flexible and value-driven payment platforms to reach both
             the <br className="hidden md:block" />
             banked and unbanked through mobile channels.
