@@ -1,107 +1,40 @@
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
-import ScrollReveal from "@/components/ui/ScrollReveal";
-import CtaImage from "@/components/ui/ctaImage";
-import { Button } from "@/components/ui/button";
+import ProductHero from "@/components/products/ProductHero";
 
-export default function GamificationPage() {
-  const router = useRouter();
+import ProductFeatures from "@/components/products/ProductFeatures";
+import ProductDemo from "@/components/products/ProductDemo";
+import ProductBackButton from "@/components/products/ProductBackButton";
+import ScrollReveal from "@/components/ui/ScrollReveal";
+
+export default function GamificationPage({ embedded=false }: { embedded?: boolean; }={}) {
+  const Container=embedded? "div":"main";
 
   return (
-    <main className="flex min-h-screen flex-col bg-white overflow-hidden">
-      {/* Back Button */}
-      <div className="px-6 lg:px-12 max-w-7xl mx-auto w-full pt-4">
-        <Button
-          variant="ghost"
-          size="sm"
-          onClick={() => router.back()}
-          className="text-gray-600 font-medium hover:text-[#5153A0] hover:bg-transparent p-0"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="m15 18-6-6 6-6" />
-          </svg>
-          Back
-        </Button>
-      </div>
+    <Container className="flex min-h-screen flex-col bg-white overflow-hidden">
+      {!embedded&&<ProductBackButton />}
 
       {/* Hero Section */}
-      <section className="pt-8 md:pt-12 lg:pt-16 pb-10 px-6 lg:px-12 max-w-7xl mx-auto w-full flex flex-col lg:flex-row items-center xl:justify-center gap-8 mb-8 md:mb-12 lg:mb-16">
-        <ScrollReveal from="left" className="w-full lg:w-1/2 text-left">
-          <span className="inline-block bg-[#5153A0] text-white px-6 py-3 border-b-[5px] border-gray-300 rounded-full text-[12px] font-bold mb-4">
-            Gamification
-          </span>
-          <h1 className="text-3xl md:text-[40px] lg:text-[40px] font-extrabold text-brand-primary leading-10  md:leading-13 mb-4">
-            Increase Engagement & Retention
-          </h1>
-          <p className="text-gray-600 font-medium text-[15px] mb-6 max-w-130 leading-relaxed">
-            Increase engagement and retention with rewards, challenges, badges,
-            and leaderboards.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center gap-4">
-            <Button
-              asChild
-              variant="default"
-              size="lg"
-              className="w-full sm:w-auto"
-            >
-              <Link href="/book-demo?product=Gamification">Book A Demo</Link>
-            </Button>
-            <Button
-              asChild
-              variant="secondary"
-              size="lg"
-              className="w-full sm:w-auto text-center"
-            >
-              <Link href="/contact-sales">
-                Contact Sales
-              </Link>
-            </Button>
-          </div>
-        </ScrollReveal>
-
-        <ScrollReveal
-          from="right"
-          delay={150}
-          className="w-full lg:w-1/2 mt-4 lg:mt-5"
-        >
-          <div className="rounded-xl w-full h-55 sm:h-70 md:h-87.5 relative overflow-hidden mix-blend-multiply">
-            <Image
-              src="/image/products/product_2.svg"
-              alt="Gamification"
-              fill
-              className="object-contain object-center"
-              priority
-            />
-          </div>
-        </ScrollReveal>
-      </section>
+      <ProductHero label={<>Gamification</>} title={<>Increase Engagement & Retention</>}
+        image="/image/products/product_2.svg" imageAlt="Gamification" featuresId="gamification-features" demoHref="/book-demo?product=Gamification"
+        className="pt-8 md:pt-12 lg:pt-16 pb-10 px-6 lg:px-12 max-w-7xl mx-auto w-full flex flex-col lg:flex-row items-center xl:justify-center gap-8 mb-8 md:mb-12 lg:mb-16" descriptionClassName="text-gray-600 mb-6 max-w-130 text-[14px] font-medium leading-6">
+        Increase engagement and retention with rewards, challenges, badges,
+        and leaderboards.
+      </ProductHero>
 
       {/* Details Section */}
-      <section className="px-6 lg:px-12 max-w-7xl mx-auto w-full py-8">
+      <section id="gamification-features" className="scroll-mt-6 px-6 lg:px-12 max-w-7xl mx-auto w-full py-8">
         <ScrollReveal className="mb-6">
-          <h2 className="max-w-xl text-2xl md:text-[28px] lg:text-[40px] font-extrabold text-brand-primary mb-3">
+          <h2 className="max-w-xl text-2xl md:text-[28px] lg:text-[26px] font-bold text-brand-primary mb-3">
             How It Works
           </h2>
-          <p className="text-gray-600 font-medium text-[15px] max-w-xl">
+          <p className="text-gray-600 max-w-xl text-[14px] font-medium leading-6">
             Discover how Gamification can transform your business operations.
           </p>
         </ScrollReveal>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {[
+          <ProductFeatures items={[
             {
               number: "01",
               title: "Easy Integration",
@@ -120,69 +53,16 @@ export default function GamificationPage() {
               description:
                 "Dedicated support team available around the clock to assist you.",
             },
-          ].map((item, index) => (
-            <ScrollReveal
-              key={item.number}
-              from={index % 2 === 0 ? "left" : "right"}
-              delay={index * 100}
-              className="flex"
-            >
-              <div className="bg-[#EFF0F6] p-8 rounded-2xl border-b-4 border-gray-200 flex flex-col items-start text-left relative overflow-hidden flex-1">
-                {/* Top section with icon and number */}
-                <div className="flex justify-between items-center w-full mb-6 relative z-10">
-                  {/* Placeholder for small icon */}
-                  <div className="w-16 h-16 bg-gray-300 rounded-xl flex-shrink-0" />
-
-                  {/* Number badge (top right) */}
-                  <span className="text-[64px] font-extrabold text-gray-300 leading-none">
-                    {item.number}
-                  </span>
-                </div>
-
-                <h3 className="text-[#5153A0] font-bold text-lg mb-3 relative z-10">
-                  {item.title}
-                </h3>
-                <p className="text-gray-500 text-[14px] font-medium leading-relaxed relative z-10 flex-1">
-                  {item.description}
-                </p>
-              </div>
-            </ScrollReveal>
-          ))}
+          ]} />
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="mt-22">
-        <div className="relative pt-22 px-6 lg:pb-0 bg-linear-to-b from-[#3E409533] to-white overflow-hidden">
-          <div className="max-w-7xl mx-auto text-center ">
-            <ScrollReveal>
-              <div className="mb-4">
-                <span className="inline-block bg-[#5153A0] text-white px-6 py-3 border-b-5 border-gray-300 rounded-full text-[12px] font-bold">
-                  Get Started
-                </span>
-              </div>
-
-              <h2 className="text-2xl md:text-[28px] lg:text-[32px] font-extrabold text-brand-primary mb-3 md:mb-4">
-                Ready To Deploy Your Gamification Channel?
-              </h2>
-
-              <p className="text-black text-[13px] md:text-[14px] max-w-2xl mx-auto mb-6 font-bold px-4 md:px-0">
-                Let&apos;s get your business connected to every mobile network
-                in Nigeria
-                <br />
-                with zero carrier delays.
-              </p>
-
-              <Button asChild variant="default" size="lg" className="mb-8">
-                <Link href="/book-demo?product=Gamification">
-                  Book Your Demo
-                </Link>
-              </Button>
-            </ScrollReveal>
-          </div>
-        </div>
-        <CtaImage />
-      </section>
-    </main>
+      <ProductDemo title={<>Ready To Deploy Your Gamification Channel?</>} demoHref="/book-demo?product=Gamification" descriptionClassName="text-black max-w-2xl mx-auto mb-6 px-4 md:px-0 text-[14px] font-medium leading-6">
+        Let&apos;s get your business connected to every mobile network
+        in Nigeria
+        <br />
+        with zero carrier delays.
+      </ProductDemo>
+    </Container>
   );
 }

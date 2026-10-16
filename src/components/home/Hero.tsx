@@ -1,88 +1,43 @@
-"use client";
-
-import { useEffect, useRef } from "react";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import LandingHeader from "./LandingHeader";
+import { Badge } from "./landingShared";
 
 export default function Hero() {
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    if (videoRef.current) {
-      const playPromise = videoRef.current.play();
-
-      if (playPromise !== undefined) {
-        playPromise.catch(() => {
-          // Suppress video autoplay rejection errors
-        });
-      }
-    }
-  }, []);
-
   return (
-    <section className="relative w-full flex flex-col overflow-hidden h-[calc(70vh-55px)] sm:h-[calc(70vh-125px)] lg:h-[calc(100vh-90px)]">
-      {/* Hero Background Video */}
-      <video
-        ref={videoRef}
-        src="/video/bg_hero.mp4"
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="
-          absolute
-          inset-0
-          w-full
-          h-full
-          object-cover
-          object-bottom
-          pointer-events-none
-
-          md:object-center
-        "
-      />
-
-      {/* Hero Content */}
-      <div className="w-full mt-0 sm:mt-4 md:mt-20">
-        <div className="relative z-10 mt-16 sm:mt-0 lg:mt-12 md:flex-1 flex flex-col items-center justify-center px-6 text-center max-w-5xl mx-auto py-1 lg:py-6 lg:mb-10">
-          <div
-            className="mb-4 md:mb-12 inline-flex items-center space-x-2 sm:space-x-3 bg-[#5153A0] backdrop-blur-md px-5 py-4 sm:px-5 sm:py-3.75 rounded-full scale-90 sm:scale-100 animate-fade-in anim-delay-0"
-            style={{
-              borderBottom: "5px solid rgba(40, 42, 120, 0.60)",
-            }}
+    <div className="h-auto bg-[#3e4095] bg-[url('/image/landing/hero-background.webp')] bg-cover bg-top bg-no-repeat text-white lg:h-[652px] max-md:bg-size-[auto_100%]">
+      <LandingHeader />
+      <section
+        className="px-6 pt-[65px] text-center [&>span]:h-[45px] [&>span]:px-5 [&>span_span]:text-[17px] [&>h1]:mx-auto [&>h1]:mt-9 [&>h1]:text-[40px] [&>h1]:font-semibold [&>h1]:leading-[42px] [&>h1]:text-white [&>p]:mx-auto [&>p]:mt-5 [&>p]:text-[16px] [&>p]:leading-6 [&>p]:text-[#d2d3e6] max-lg:pb-[100px] max-md:pt-[52px] max-md:pb-20 max-md:[&>h1]:max-w-[560px] max-md:[&>h1]:mt-8 max-md:[&>h1]:leading-10 max-md:[&>p]:max-w-[480px] max-md:[&>p]:mt-6 max-[23.75rem]:[&>span]:px-3 max-[23.75rem]:[&>span]:text-[11px]"
+        aria-labelledby="hero-heading"
+      >
+        <Badge>
+          <span aria-hidden="true">✦</span> Trusted Payment Infrastructure{" "}
+          <span aria-hidden="true">✦</span>
+        </Badge>
+        <h1 id="hero-heading">
+          Secure And Simple Payments <br className="max-md:hidden" /> For
+          Everyone
+        </h1>
+        <p>
+          We offer flexible and value-driven payment platforms to reach both the
+          <br className="max-md:hidden" /> banked and unbanked through mobile
+          channels.
+        </p>
+        <div className="mt-[38px] flex justify-center gap-2.5 max-md:mt-8">
+          <Link
+            href="/book-demo"
+            className="inline-flex min-h-[50px] items-center justify-center rounded-[5px] border border-transparent bg-white px-5 text-[14px] font-semibold leading-5 whitespace-nowrap text-[#3e4095]"
           >
-            <span className="text-white text-[14px] sm:text-xs">✦</span>
-
-            <span className="text-white text-[11px] sm:text-[16px] sm:text-xs font-bold tracking-wide">
-              Trusted Payment Infrastructure
-            </span>
-
-            <span className="text-white text-[14px] sm:text-xs">✦</span>
-          </div>
-
-          <h1 className="text-[20px] sm:text-[28px] md:text-[36px] lg:text-[40px] font-extrabold text-white leading-tight lg:leading-[1.15] mb-6 max-w-4xl px-2 sm:px-0 animate-fade-up anim-delay-150">
-            Secure Payments For Everyone, Enabling Seamless Transactions{" "}
-            <br className="hidden md:block" />
-            Anywhere.
-          </h1>
-
-          <p className="text-gray-100 text-[12px] sm:text-base md:text-[18px] max-w-3xl mx-auto mb-10 leading-relaxed px-4 sm:px-0 font-medium animate-fade-up anim-delay-300">
-            We offer flexible and value-driven payment platforms to reach both
-            the <br className="hidden md:block" />
-            banked and unbanked through mobile channels.
-          </p>
-
-          <div className="flex flex-row items-center justify-center space-x-3 sm:space-x-4 w-full px-2 mt-4 sm:mt-0 animate-fade-up anim-delay-450">
-            <Button asChild variant="white" size="lg" className="px-3 md:px-5">
-              <Link href="/book-demo">Book A Demo</Link>
-            </Button>
-
-            <Button asChild variant="brand" size="lg" className="px-3 md:px-5">
-              <Link href="/contact-sales">Contact Sales</Link>
-            </Button>
-          </div>
+            Book A Demo
+          </Link>
+          <Link
+            href="/contact-sales"
+            className="inline-flex min-h-[50px] items-center justify-center rounded-[5px] border border-transparent bg-[#5153a0] px-5 text-[14px] font-semibold leading-5 whitespace-nowrap text-white"
+          >
+            Contact Sales
+          </Link>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 }

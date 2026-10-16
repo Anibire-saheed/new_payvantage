@@ -2,8 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Schibsted_Grotesk, Montserrat } from "next/font/google";
 
 import "./globals.css";
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
+import SiteChrome from "@/components/layout/SiteChrome";
 import Providers from "@/components/layout/Providers";
 
 const schibstedGrotesk = Schibsted_Grotesk({
@@ -79,9 +78,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-full flex flex-col text-foreground bg-background">
         <Providers>
-          <Navbar />
-          {children}
-          <Footer />
+          <SiteChrome>{children}</SiteChrome>
         </Providers>
       </body>
     </html>

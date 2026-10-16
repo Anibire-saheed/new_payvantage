@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import ContactFields from "@/components/forms/ContactFields";
 import axios from "axios";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { submitContactSales } from "@/lib/api/contactSales";
@@ -108,10 +109,10 @@ export default function ContactSalesClient() {
           <span className="inline-block bg-[#5153A0] text-white px-6 py-2 rounded-full text-xs font-bold uppercase tracking-wider">
             Contact Sales
           </span>
-          <h1 className="text-2xl md:text-4xl font-extrabold text-[#2C2E6A] tracking-tight">
+          <h1 className="font-bold text-[#2C2E6A] tracking-tight text-[24px] md:text-[26px] leading-8 md:leading-9">
             Let’s Find the Right Solution for Your Business.
           </h1>
-          <p className="text-[12px] md:text-[16px] text-gray-600 max-w-2xl mx-auto">
+          <p className="text-gray-600 max-w-2xl mx-auto text-[14px] font-medium leading-6">
             Speak with our sales team to explore Payvantage’s payment,
             verification, and business solutions designed to meet your specific
             needs.
@@ -127,10 +128,10 @@ export default function ContactSalesClient() {
                   ✓
                 </div>
                 <div className="space-y-2">
-                  <h3 className="text-2xl font-extrabold text-gray-900">
+                  <h3 className="text-2xl font-bold text-gray-900">
                     Sales Inquiry Submitted!
                   </h3>
-                  <p className="text-gray-600 max-w-md mx-auto">
+                  <p className="text-gray-600 max-w-md mx-auto text-[14px] font-medium leading-6">
                     Thank you,{" "}
                     <span className="font-semibold text-[#2C2E6A]">
                       {formData.name}
@@ -167,92 +168,7 @@ export default function ContactSalesClient() {
                   </div>
                 )}
 
-                {/* Name field */}
-                <div>
-                  <label
-                    htmlFor="name"
-                    className="block text-sm font-bold text-gray-700 mb-2"
-                  >
-                    Full Name <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    onBlur={() => handleBlur("name")}
-                    placeholder="Enter your full name"
-                    className={`w-full px-4 py-3 rounded-lg border text-gray-900 text-sm outline-none transition-all ${
-                      touched.name && errors.name
-                        ? "border-red-500 bg-red-50/20 focus:ring-2 focus:ring-red-500"
-                        : "border-gray-300 focus:ring-2 focus:ring-[#5153A0] focus:border-transparent"
-                    }`}
-                  />
-                  {touched.name && errors.name && (
-                    <p className="mt-1.5 text-xs font-semibold text-red-600 flex items-center gap-1">
-                      <span>⚠</span> {errors.name}
-                    </p>
-                  )}
-                </div>
-
-                {/* Email field */}
-                <div>
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-bold text-gray-700 mb-2"
-                  >
-                    Email <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    onBlur={() => handleBlur("email")}
-                    placeholder="name@example.com"
-                    className={`w-full px-4 py-3 rounded-lg border text-gray-900 text-sm outline-none transition-all ${
-                      touched.email && errors.email
-                        ? "border-red-500 bg-red-50/20 focus:ring-2 focus:ring-red-500"
-                        : "border-gray-300 focus:ring-2 focus:ring-[#5153A0] focus:border-transparent"
-                    }`}
-                  />
-                  {touched.email && errors.email && (
-                    <p className="mt-1.5 text-xs font-semibold text-red-600 flex items-center gap-1">
-                      <span>⚠</span> {errors.email}
-                    </p>
-                  )}
-                </div>
-
-                {/* Phone Number field */}
-                <div>
-                  <label
-                    htmlFor="phoneNumber"
-                    className="block text-sm font-bold text-gray-700 mb-2"
-                  >
-                    Phone Number <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="tel"
-                    id="phoneNumber"
-                    name="phoneNumber"
-                    value={formData.phoneNumber}
-                    onChange={handleChange}
-                    onBlur={() => handleBlur("phoneNumber")}
-                    placeholder="Enter your phone number"
-                    className={`w-full px-4 py-3 rounded-lg border text-gray-900 text-sm outline-none transition-all ${
-                      touched.phoneNumber && errors.phoneNumber
-                        ? "border-red-500 bg-red-50/20 focus:ring-2 focus:ring-red-500"
-                        : "border-gray-300 focus:ring-2 focus:ring-[#5153A0] focus:border-transparent"
-                    }`}
-                  />
-                  {touched.phoneNumber && errors.phoneNumber && (
-                    <p className="mt-1.5 text-xs font-semibold text-red-600 flex items-center gap-1">
-                      <span>⚠</span> {errors.phoneNumber}
-                    </p>
-                  )}
-                </div>
+                <ContactFields values={formData} touched={touched} errors={errors} onChange={handleChange} onBlur={handleBlur} />
 
                 {/* Comment / Special Requirements field */}
                 <div>

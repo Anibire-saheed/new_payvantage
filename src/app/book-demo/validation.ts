@@ -1,41 +1,9 @@
 import * as z from "zod";
+import { contactFieldsSchema, validateFields } from "@/lib/validation/contact";
 
-export const bookDemoFormSchema = z.object({
-  name: z
-    .string()
-    .trim()
-    .min(1, { message: "Full name is required." })
-    .min(2, { message: "Full name must be at least 2 characters." }),
-  email: z.string().trim().min(1, { message: "Email is required." }).email({
-    message: "Please enter a valid email address (e.g. name@example.com).",
-  }),
-  phoneNumber: z
-    .string()
-    .trim()
-    .min(1, { message: "Phone number is required." })
-    .regex(/^[+0-9\s\-()]{7,20}$/, {
-      message: "Please enter a valid phone number.",
-    }),
-  product: z.string().trim().min(1, { message: "Please select a product." }),
-  comment: z.string().optional(),
-});
-
+export const bookDemoFormSchema = contactFieldsSchema.extend({ product: z.string().trim().min(1, { message: "Please select a product." }) });
 export type BookDemoFormData = z.infer<typeof bookDemoFormSchema>;
 
-export function validateBookDemoForm(
-  data: BookDemoFormData,
-): Partial<Record<keyof BookDemoFormData, string>> {
-  const result = bookDemoFormSchema.safeParse(data);
-  if (result.success) {
-    return {};
-  }
-
-  const errors: Partial<Record<keyof BookDemoFormData, string>> = {};
-  for (const issue of result.error.issues) {
-    const field = issue.path[0] as keyof BookDemoFormData;
-    if (field && !errors[field]) {
-      errors[field] = issue.message;
-    }
-  }
-  return errors;
+export function validateBookDemoForm(data: BookDemoFormData): Partial<Record<keyof BookDemoFormData, string>> {
+  return validateFields(bookDemoFormSchema, data);
 }

@@ -69,13 +69,13 @@ export default function ScrollReveal({
     none: "opacity-0",
   };
 
-  const style: CSSProperties = delay ? { transitionDelay: `${delay}ms` } : {};
+  const style: CSSProperties = delay ? { transitionDelay: `${Math.min(delay, 100)}ms` } : {};
 
   return (
     <Tag
       ref={ref}
       style={style}
-      className={`transition-all duration-700 ease-out ${visible ? "opacity-100 translate-x-0 translate-y-0" : hidden[from]} ${className}`}
+      className={`transition-[opacity,transform] duration-[450ms] ease-out motion-reduce:transition-none motion-reduce:opacity-100 motion-reduce:transform-none ${visible ? "opacity-100 translate-x-0 translate-y-0" : hidden[from]} ${className}`}
     >
       {children}
     </Tag>

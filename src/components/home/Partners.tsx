@@ -1,98 +1,41 @@
-"use client";
-
 import Image from "next/image";
-import ScrollReveal from "@/components/ui/ScrollReveal";
-import { motion } from "motion/react";
+import { asset } from "./landingShared";
+import styles from "./Partners.module.css";
+
+const partners = [
+  { name: "Creditswitch", src: asset("creditswitch"), width: 145 },
+  { name: "Habaripay", src: asset("habaripay"), width: 145 },
+  { name: "AWS", src: asset("aws"), width: 68 },
+  { name: "Ethica Microfinance Bank", src: asset("ethica"), width: 131 },
+  { name: "Jamb", src: asset("jamb"), width: 125 },
+  { name: "T2", src: "/image/partners/t2.svg", width: 80 },
+  { name: "Jaiz Bank", src: "/image/partners/Jaiz.png", width: 85 },
+  { name: "Glo", src: "/image/partners/glo.svg", width: 65 },
+  { name: "WAEC", src: "/image/partners/waec.svg", width: 60 },
+  { name: "ZippyWorld", src: "/image/partners/zippylogo.svg", width: 65 },
+  { name: "MTN", src: "/image/partners/mtn.png", width: 100 },
+];
 
 export default function Partners() {
-  const topRow = [
-    { name: "Habari", src: "/image/partners/habaripay.svg" },
-    { name: "MTN", src: "/image/partners/mtn.png" },
-    { name: "AWS", src: "/image/partners/aws.png" },
-    { name: "Jaiz", src: "/image/partners/Jaiz.png" },
-    {
-      name: "CreditSwitch",
-      src: "/image/partners/creditswitch.png",
-    },
-    {
-      name: "ethica",
-      src: "/image/partners/EthicaLogoMFB.png",
-    },
-    {
-      name: "ZippyWorld",
-      src: "/image/partners/zippylogo.svg",
-    },
-    { name: "Waec", src: "/image/partners/waec.svg" },
-    { name: "Jamb", src: "/image/partners/jamb.svg" },
-    { name: "T2", src: "/image/partners/t2.svg" },
-    { name: "Glo", src: "/image/partners/glo.svg" },
-  ];
-
   return (
-    <section className="pt-3 md:pt-8 pb-16 px-6 lg:px-12 bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto text-center">
-        <ScrollReveal>
-          <h3 className="text-[#374151] font-black mb-16 text-[22px]">
-            Partners who trust us
-          </h3>
-        </ScrollReveal>
-
-        <div className="relative w-full overflow-hidden">
-          <motion.div
-            className="flex w-max"
-            animate={{
-              x: ["0%", "-50%"],
-            }}
-            transition={{
-              x: {
-                repeat: Infinity,
-                repeatType: "loop",
-                duration: 20,
-                ease: "linear",
-              },
-            }}
-          >
-            {/* First copy */}
-            <div className="flex items-center gap-16 pr-16 shrink-0">
-              {topRow.map((partner, index) => (
-                <div
-                  key={`${partner.name}-${index}`}
-                  className="flex items-center justify-center grayscale hover:grayscale-0 transition-all cursor-pointer shrink-0"
-                >
-                  <Image
-                    src={partner.src}
-                    alt={partner.name}
-                    width={100}
-                    height={100}
-                    className="w-auto h-15 object-contain"
-                  />
-                </div>
+    <section className="mx-auto w-[min(1240px,calc(100%-48px))] py-[100px] text-center max-md:py-[60px]" aria-labelledby="partners-heading">
+      <h2 className="text-[26px] font-bold leading-9 text-[#3e4095] max-md:text-[24px] max-md:leading-8" id="partners-heading">
+        Partners Who Trust Us
+      </h2>
+      <div className={`${styles.viewport} mt-[30px]`}>
+        <div className={styles.track}>
+          {[false, true].map(duplicate => (
+            <ul key={String(duplicate)} className={styles.group} aria-hidden={duplicate || undefined}>
+              {partners.map(partner => (
+                <li key={partner.name} className="flex h-24 items-center justify-center px-3">
+                  <Image src={partner.src} alt={duplicate ? "" : partner.name} width={partner.width} height={60} className="h-[60px] max-w-full object-contain grayscale" />
+                </li>
               ))}
-            </div>
-
-            {/* Second copy */}
-            <div
-              className="flex items-center gap-16 pr-16 shrink-0"
-              aria-hidden="true"
-            >
-              {topRow.map((partner, index) => (
-                <div
-                  key={`duplicate-${partner.name}-${index}`}
-                  className="flex items-center justify-center grayscale hover:grayscale-0 transition-all cursor-pointer shrink-0"
-                >
-                  <Image
-                    src={partner.src}
-                    alt=""
-                    width={100}
-                    height={100}
-                    className="w-auto h-15 object-contain"
-                  />
-                </div>
-              ))}
-            </div>
-          </motion.div>
+            </ul>
+          ))}
         </div>
       </div>
+
     </section>
   );
 }

@@ -1,8 +1,9 @@
 "use client";
 
 import Image from "next/image";
+import { Badge } from "@/components/home/landingShared";
 import Link from "next/link";
-import Stats from "@/components/home/Stats";
+import Stats from "@/components/home/LandingStats";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { ChevronDownIcon } from "@/components/about/DropIcon";
 import { Button } from "@/components/ui/button";
@@ -16,18 +17,16 @@ export default function AboutPageClient() {
   };
 
   return (
-    <main className="flex min-h-screen flex-col bg-white overflow-hidden">
+    <main className="flex min-h-screen flex-col bg-white overflow-hidden font-sans text-[14px] leading-6">
       {/* Hero Section */}
       <section className="pt-8 md:pt-12 lg:pt-16 pb-4 px-6 lg:px-12 max-w-7xl mx-auto w-full flex flex-col lg:flex-row items-center xl:justify-center gap-8 mb-16 md:mb-24 lg:mb-32">
         <ScrollReveal from="left" className="w-full lg:w-1/2 text-left">
-          <span className="inline-block bg-[#5153A0] text-white px-8 py-4 border-b-[5px] border-gray-300 rounded-full text-[12px] font-bold mb-6">
-            Our Story
-          </span>
-          <h1 className="text-3xl md:text-[40px] lg:text-[40px] font-extrabold text-brand-primary leading-13 mb-6">
+          <Badge className="mb-6">Our Story</Badge>
+          <h1 className="font-bold text-brand-primary mb-6 text-[24px] md:text-[26px] leading-8 md:leading-9">
             Enabling Payments For A <br className="hidden lg:block" /> Digital
             Africa
           </h1>
-          <p className="text-gray-600 font-medium text-[15px] mb-10 max-w-130 leading-relaxed">
+          <p className="text-black mb-10 max-w-130 text-[14px] font-normal leading-6">
             We are a leading tech-driven payment solutions provider in Africa.
             We aim to connect the continent with digital payment solutions,
             creating value for everyday operations.
@@ -38,7 +37,7 @@ export default function AboutPageClient() {
               onClick={handleReadOurStory}
               variant="default"
               size="lg"
-              className="w-full sm:w-auto"
+              className="w-full sm:w-auto text-[14px] font-medium"
             >
               Read Our Story
               <ChevronDownIcon className="w-5 h-5 ml-1 mt-2" />
@@ -47,7 +46,7 @@ export default function AboutPageClient() {
               asChild
               variant="secondary"
               size="lg"
-              className="w-full sm:w-auto text-center"
+              className="w-full sm:w-auto text-center text-[14px] font-medium"
             >
               <Link href="/book-demo">Book A Demo</Link>
             </Button>
@@ -74,19 +73,17 @@ export default function AboutPageClient() {
       {/* Built To Solve A Real Problem */}
       <section
         id="our-story"
-        className="px-6 lg:px-12 max-w-7xl mx-auto w-full flex flex-col lg:flex-row gap-12 items-start "
+        className="mx-auto grid w-[min(1240px,calc(100%-48px))] grid-cols-1 items-start gap-10 lg:grid-cols-2"
       >
-        <ScrollReveal from="left" className="w-full lg:w-[45%]">
-          <span className="inline-block bg-[#5153A0] text-white px-8 py-4 border-b-[5px] border-gray-300 rounded-full text-[12px] font-bold mb-6">
-            Who We Are
-          </span>
-          <h2 className="text-3xl md:text-[40px] font-extrabold text-brand-primary mb-8 leading-12">
-            Built To Solve A Real <br className="hidden md:block" /> Problem
+        <ScrollReveal from="left" className="min-w-0 lg:pt-[50px]">
+          <Badge className="mb-6">Who We Are</Badge>
+          <h2 className="text-[24px] md:text-[26px] font-bold text-brand-primary mb-6 leading-8 md:leading-9">
+            Built To Solve A Real Problem.
           </h2>
-          <div className="space-y-6 text-black font-medium text-[16px] leading-relaxed">
-            <p className="font-semibold text-[#000000] border-l-4 border-brand-logo text-[16px] pl-4 py-1 italic">
-              &ldquo;We set out to provide and enable payment for emerging
-              customers, addressing their pain points head-on.&rdquo;
+          <div className="space-y-6 text-black font-normal text-[14px] leading-6">
+            <p className="text-[#000000] border-l-4 border-[#e5e5f0] pl-4 mb-12 italic text-[14px] font-bold leading-6">
+              &ldquo;We set out to provide and enable payment for Africans —
+              addressing their pain points head-on.&rdquo;
             </p>
             <p>
               We understand that to deliver value continuously, we must address
@@ -95,9 +92,8 @@ export default function AboutPageClient() {
               customers and address their pain points.
             </p>
             <p>
-              We envision a world where we can be confident in helping customers
-              provide value through disruptive strategy reaching both the banked
-              and unbanked through mobile-first channels.
+              We envision a world where payment can be instant, secure and
+              affordable for Africans.
             </p>
             <p>
               We are passionate about enabling payments for merchants and
@@ -107,26 +103,34 @@ export default function AboutPageClient() {
           </div>
         </ScrollReveal>
 
-        <div className="w-full lg:w-[55%] flex flex-col space-y-4">
+        <div className="min-w-0 flex flex-col gap-4">
           {[
             {
               icon: "/image/about/Built_icon1.svg",
               title: "What We Do",
-              body: "We enable payments for merchants and customers by leveraging emerging technologies and strategic partnerships across Nigeria's financial value network.",
+              body: (
+                <>
+                  We enable payments for merchants and customers by leveraging
+                  emerging technologies and strategic partnerships across
+                  Nigeria&apos;s financial value
+                  <br />
+                  network.
+                </>
+              ),
             },
             {
               icon: "/image/about/Built_icon2.svg",
-              title: "How We Do It",
+              title: "Why We Do It",
               body: "Millions of Nigerians remain underserved by traditional financial systems. We believe every person deserves access to fast, secure, and affordable digital payments.",
             },
             {
               icon: "/image/about/Built_icon3.svg",
-              title: "Social Impact",
-              body: "Through USSD platforms, virtual accounts, SoftPOS, and value-added services all underpinned by developer-friendly APIs and robust cloud infrastructure.",
+              title: "How We Do It",
+              body: "Through USSD platforms, virtual accounts, SoftPOS, and value-added services — all underpinned by developer-friendly APIs and robust cloud infrastructure.",
             },
           ].map((item, i) => (
             <ScrollReveal key={item.title} from="right" delay={i * 100}>
-              <div className="bg-[#5153A01A] p-8 rounded-xl border-b-5 border-gray-300 flex flex-col items-start text-left">
+              <div className="flex flex-col items-start rounded-[16px] bg-[#eeeef5] px-6 py-5 text-left shadow-[0_5px_0_#e2e2eb] sm:px-10">
                 <div className="mb-4 shrink-0">
                   <Image
                     src={item.icon}
@@ -140,10 +144,10 @@ export default function AboutPageClient() {
                     }}
                   />
                 </div>
-                <h3 className="text-[#5153A0] font-bold text-[14px] mb-2">
+                <h3 className="mb-4 text-[14px] font-bold leading-5 text-[#5153A0]">
                   {item.title}
                 </h3>
-                <p className="text-gray-500 text-[14px] font-medium leading-relaxed">
+                <p className="text-[14px] font-normal leading-[25px] text-[#777777]">
                   {item.body}
                 </p>
               </div>
@@ -153,15 +157,13 @@ export default function AboutPageClient() {
       </section>
 
       {/* Guiding Principles */}
-      <section className="pt-22 pb-8 px-6 lg:px-12 w-full mt-6 border-t border-gray-100">
+      <section className="pt-22 pb-8 px-6 lg:px-12 w-full mt-6 ">
         <ScrollReveal className="max-w-7xl mx-auto text-center mb-10">
-          <span className="inline-block bg-[#5153A0] text-white px-8 py-4 border-b-[5px] border-gray-300 rounded-full text-[12px] font-bold mb-6">
-            What Drives Us
-          </span>
-          <h2 className="text-3xl md:text-[40px] font-extrabold text-brand-primary mb-5">
+          <Badge className="mb-6">What Drives Us</Badge>
+          <h2 className="text-[24px] md:text-[26px] font-bold leading-8 md:leading-9 text-brand-primary mb-5">
             Our Guiding Principles
           </h2>
-          <p className="text-[#1a1a1a] font-bold text-[15px]">
+          <p className="text-[#1a1a1a] text-[14px] font-normal leading-6">
             Everything we build and every decision we make flows from three core
             commitments.
           </p>
@@ -209,13 +211,13 @@ export default function AboutPageClient() {
                   }}
                 />
               </div>
-              <h4 className="text-[#5153A0] text-[14px] font-extrabold mb-2 uppercase">
+              <h4 className="text-[#5153A0] text-[14px] font-bold leading-5 mb-2">
                 {card.tag}
               </h4>
-              <h3 className="text-brand-logo font-extrabold text-[20px] mb-3">
+              <h3 className="text-[#5153A0] font-bold text-[20px] leading-7 mb-3">
                 {card.title}
               </h3>
-              <p className="text-[#5153A0] font-medium text-[14px] leading-relaxed">
+              <p className="text-black text-[14px] font-normal leading-5">
                 {card.body}
               </p>
             </ScrollReveal>
@@ -228,179 +230,19 @@ export default function AboutPageClient() {
         <Stats />
       </div>
 
-      {/* Milestones */}
+      {/* Book a demo */}
       <section className="py-14 px-6 lg:px-12 w-full bg-linear-to-b from-[#3E409533] to-white">
-        <ScrollReveal className="max-w-3xl mx-auto text-center mb-12">
-          <span className="inline-block bg-[#5153A0] text-white px-8 py-4 border-b-[5px] border-gray-300 rounded-full text-[12px] font-bold mb-6">
-            Our Journey
-          </span>
-          <h2 className="text-2xl md:text-[40px] font-extrabold text-brand-primary mb-5">
-            Milestones That Shaped Us
-          </h2>
-          <p className="text-[#1a1a1a] font-bold text-[15px]">
-            From an idea to a trusted payment infrastructure. Here &apos;s how
-            Payvantage grew.
-          </p>
-        </ScrollReveal>
-
-        <div className="max-w-3xl mx-auto relative pl-1 md:pl-0 mt-4">
-          <div className="absolute left-7.5 md:left-1/2 top-0 bottom-0 w-1 bg-white md:-ml-0.5 -ml-7.5" />
-
-          {/* Milestone 1 */}
-          <ScrollReveal
-            from="left"
-            className="relative mb-6 w-full flex flex-col md:flex-row items-center justify-between"
-          >
-            <div className="w-[calc(100%-0.5rem)] md:w-[45%] bg-white p-6 rounded-lg shadow-sm text-left relative z-10 ml-5 md:ml-0 md:text-left">
-              <div className="hidden md:block absolute top-[50%] -translate-y-1/2 -right-2.5 w-5.5 h-5.5 bg-white rotate-45 rounded-[2px] -z-10" />
-              <div className="block md:hidden absolute top-[50%] -translate-y-1/2 -left-[10px] w-5.5 h-5.5 bg-white rotate-45 rounded-[2px] -z-10" />
-              <span className="text-brand-primary font-bold text-[14px] md:text-[15px] mb-2 block">
-                July 2018
-              </span>
-              <h3 className="text-[#1a1a1a] font-extrabold text-[16px] mb-1">
-                Payvantage was born
-              </h3>
-              <p className="text-gray-500 text-[14px] font-medium leading-relaxed">
-                Founded with a clear mission: To bridge the payment gap for
-                Nigeria &apos;s emerging digital economy and reach the unbanked
-                through mobile channels.
-              </p>
-            </div>
-            <div className="absolute top-[50%] -translate-y-1/2 left-[30px] md:left-1/2 w-5.5 h-5.5 bg-[#F5F6FA] rounded-full border-[5px] border-white -ml-6 md:-ml-[11px] z-20" />
-            <div className="hidden md:block w-[45%]" />
-          </ScrollReveal>
-
-          {/* Milestone 2 */}
-          <ScrollReveal
-            from="right"
-            delay={100}
-            className="relative mb-6 w-full flex flex-col md:flex-row items-center justify-between"
-          >
-            <div className="hidden md:block w-[45%]" />
-            <div className="absolute top-[50%] -translate-y-1/2 left-7.5 md:left-1/2 w-5.5 h-5.5 bg-[#F5F6FA] rounded-full border-[5px] border-white -ml-6 md:-ml-2.75 z-20" />
-            <div className="w-[calc(100%-0.5rem)] md:w-[45%] bg-white p-6 rounded-lg shadow-sm text-left relative z-10 ml-5 md:ml-0">
-              <div className="absolute top-[50%] -translate-y-1/2 -left-2.5 w-5.5 h-5.5 bg-white rotate-45 rounded-xs -z-10" />
-              <span className="text-brand-primary font-bold text-[14px] md:text-[15px] mb-2 block">
-                ⁠July 2023
-              </span>
-              <h3 className="text-[#1a1a1a] font-extrabold text-[16px] mb-1">
-                USSD platform launched
-              </h3>
-              <p className="text-gray-500 text-[14px] font-medium leading-relaxed">
-                Deployed our robust, scalable USSD platform enabling interactive
-                payment experiences for millions of feature-phone users across
-                Nigeria.
-              </p>
-            </div>
-          </ScrollReveal>
-
-          {/* Milestone 3 */}
-          <ScrollReveal
-            from="left"
-            delay={100}
-            className="relative w-full flex flex-col md:flex-row items-center justify-between mb-6"
-          >
-            <div className="w-[calc(100%-0.5rem)] md:w-[45%] bg-white p-6 rounded-lg shadow-sm text-left relative z-10 ml-5 md:ml-0 md:text-left">
-              <div className="hidden md:block absolute top-[50%] -translate-y-1/2 -right-2.5 w-5.5 h-5.5 bg-white rotate-45 rounded-xs -z-10" />
-              <div className="block md:hidden absolute top-[50%] -translate-y-1/2 -left-2.5 w-5.5 h-5.5 bg-white rotate-45 rounded-xs -z-10" />
-              <span className="text-brand-primary font-bold text-[14px] md:text-[15px] mb-2 block">
-                ⁠April 2020
-              </span>
-              <h3 className="text-[#1a1a1a] font-extrabold text-[16px] mb-1">
-                Strategic partnerships secured
-              </h3>
-              <p className="text-gray-500 text-[14px] font-medium leading-relaxed">
-                Forged partnerships with MTN, Globacom, 9Mobile, Jaiz Bank,
-                WAEC, and AWS, building one of Nigeria&apos;s most connected
-                ecosystems.
-              </p>
-            </div>
-            <div className="absolute top-[50%] -translate-y-1/2 left-7.5 md:left-1/2 w-5.5 h-5.5 bg-[#F5F6FA] rounded-full border-[5px] border-white -ml-6 md:-ml-2.75 z-20" />
-            <div className="hidden md:block w-[45%]" />
-          </ScrollReveal>
-
-          {/* Milestone 4 */}
-          <ScrollReveal
-            from="right"
-            delay={100}
-            className="relative mb-6 w-full flex flex-col md:flex-row items-center justify-between"
-          >
-            <div className="hidden md:block w-[45%]" />
-            <div className="absolute top-[50%] -translate-y-1/2 left-7.5 md:left-1/2 w-5.5 h-5.5 bg-[#F5F6FA] rounded-full border-[5px] border-white -ml-6 md:-ml-2.75 z-20" />
-            <div className="w-[calc(100%-0.5rem)] md:w-[45%] bg-white p-6 rounded-lg shadow-sm text-left relative z-10 ml-5 md:ml-0">
-              <div className="absolute top-[50%] -translate-y-1/2 -left-2.5 w-5.5 h-5.5 bg-white rotate-45 rounded-xs -z-10" />
-              <span className="text-brand-primary font-bold text-[14px] md:text-[15px] mb-2 block">
-                August 2024
-              </span>
-              <h3 className="text-[#1a1a1a] font-extrabold text-[16px] mb-1">
-                ₦1 Trillion+ processed and growing
-              </h3>
-              <p className="text-gray-500 text-[14px] font-medium leading-relaxed">
-                Processing over ₦1 Trillion in transactions, 1.7 billion
-                transaction counts, and serving 33.6 million unique customer
-                interactions with eyes firmly on Sub-Saharan Africa.
-              </p>
-            </div>
-          </ScrollReveal>
-          {/* Milestone 5 */}
-          <ScrollReveal
-            from="left"
-            className="relative mb-6 w-full flex flex-col md:flex-row items-center justify-between"
-          >
-            <div className="w-[calc(100%-0.5rem)] md:w-[45%] bg-white p-6 rounded-lg shadow-sm text-left relative z-10 ml-5 md:ml-0 md:text-left">
-              <div className="hidden md:block absolute top-[50%] -translate-y-1/2 -right-2.5 w-5.5 h-5.5 bg-white rotate-45 rounded-[2px] -z-10" />
-              <div className="block md:hidden absolute top-[50%] -translate-y-1/2 -left-[10px] w-5.5 h-5.5 bg-white rotate-45 rounded-[2px] -z-10" />
-              <span className="text-brand-primary font-bold text-[14px] md:text-[15px] mb-2 block">
-                October 2025
-              </span>
-              <h3 className="text-[#1a1a1a] font-extrabold text-[16px] mb-1">
-                Nigeria&apos;s first developed locally core banking system
-              </h3>
-              <p className="text-gray-500 text-[14px] font-medium leading-relaxed">
-                Partnered with Ethica to launch Nigeria&apos;s first developed
-                core banking system, delivering a secure and scalable banking
-                platform.
-              </p>
-            </div>
-            <div className="absolute top-[50%] -translate-y-1/2 left-[30px] md:left-1/2 w-5.5 h-5.5 bg-[#F5F6FA] rounded-full border-[5px] border-white -ml-6 md:-ml-[11px] z-20" />
-            <div className="hidden md:block w-[45%]" />
-          </ScrollReveal>
-          {/* Milestone 6 */}
-          <ScrollReveal
-            from="right"
-            delay={100}
-            className="relative mb-6 w-full flex flex-col md:flex-row items-center justify-between"
-          >
-            <div className="hidden md:block w-[45%]" />
-            <div className="absolute top-[50%] -translate-y-1/2 left-7.5 md:left-1/2 w-5.5 h-5.5 bg-[#F5F6FA] rounded-full border-[5px] border-white -ml-6 md:-ml-2.75 z-20" />
-            <div className="w-[calc(100%-0.5rem)] md:w-[45%] bg-white p-6 rounded-lg shadow-sm text-left relative z-10 ml-5 md:ml-0">
-              <div className="absolute top-[50%] -translate-y-1/2 -left-2.5 w-5.5 h-5.5 bg-white rotate-45 rounded-xs -z-10" />
-              <span className="text-brand-primary font-bold text-[14px] md:text-[15px] mb-2 block">
-                April 2026
-              </span>
-              <h3 className="text-[#1a1a1a] font-extrabold text-[16px] mb-1">
-                Launched flagship products
-              </h3>
-              <p className="text-gray-500 text-[14px] font-medium leading-relaxed">
-                Launched Liveliness, along with a portfolio of innovative
-                digital solutions designed to enhance customer engagement and
-              </p>
-            </div>
-          </ScrollReveal>
-        </div>
         <div className="max-w-7xl mx-auto text-center ">
           <ScrollReveal>
-            <div className="mb-8 mt-22 md:mt-28">
-              <span className="inline-block bg-[#5153A0] text-white px-8 py-3 md:py-5 border-b-5 border-gray-300 rounded-full text-[12px] font-bold">
-                Get Started
-              </span>
+            <div className="mb-8">
+              <Badge>Get Started</Badge>
             </div>
 
-            <h2 className="text-2xl md:text-[28px] lg:text-[32px] font-extrabold text-brand-primary mb-4 md:mb-6">
+            <h2 className="text-2xl md:text-[28px] lg:text-[32px] font-bold text-brand-primary mb-4 md:mb-6">
               Book A Demo Now
             </h2>
 
-            <p className="text-black text-[13px] md:text-[14px] max-w-2xl mx-auto mb-10 font-bold px-4 md:px-0">
+            <p className="text-black max-w-2xl mx-auto mb-10 px-4 md:px-0 text-[14px] font-normal leading-6">
               Lets demonstrate how we can add value to your company with our{" "}
               <br className="hidden md:block" /> suite of payment solutions.
             </p>

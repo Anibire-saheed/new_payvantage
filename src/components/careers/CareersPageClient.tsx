@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { Badge } from "@/components/home/landingShared";
 import { useRouter } from "next/navigation";
 import { useQuery } from "@tanstack/react-query";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
@@ -59,19 +60,19 @@ export default function CareersPageClient() {
   };
 
   return (
-    <main className="flex min-h-screen flex-col bg-white">
+    <main className="flex min-h-screen flex-col bg-white font-sans text-[14px] leading-6">
       {/* Hero Section */}
       <section className="pt-12 pb-12 px-6 lg:px-12 max-w-4xl mx-auto text-center">
-        <span className="inline-block bg-[#5153A0] text-white px-8 py-4 border-b-[5px] border-gray-300 rounded-full text-[12px] font-bold mb-6 animate-fade-in anim-delay-0">
+        <Badge className="mb-6 animate-fade-in anim-delay-0">
           Careers At Payvantage
-        </span>
+        </Badge>
 
-        <h1 className="text-[24px] lg:text-[40px] font-black text-brand-primary leading-[1.2] mb-6 animate-fade-up anim-delay-150">
+        <h1 className="text-[24px] md:text-[26px] font-bold text-brand-primary leading-8 md:leading-9 mb-6 animate-fade-up anim-delay-150">
           Join The Team Behind <br className="hidden md:block" /> The Future Of
           Seamless Payments
         </h1>
 
-        <p className="text-black font-bold max-w-150 mx-auto mb-10 text-[14px] md:text-[16px] leading-relaxed animate-fade-up anim-delay-300">
+        <p className="text-black font-medium max-w-150 mx-auto mb-10 text-[14px] leading-6 animate-fade-up anim-delay-300">
           We offer flexible and value-driven payment platforms to reach both the{" "}
           <br className="hidden md:block" />
           banked and unbanked through mobile channels.
@@ -81,7 +82,7 @@ export default function CareersPageClient() {
       {/* Available Roles Section */}
       <section className="py-4 px-6 lg:px-12 w-full max-w-250 mx-auto">
         <ScrollReveal>
-          <h3 className="text-brand-primary font-bold mb-2 text-[16px]">
+          <h3 className="text-brand-primary font-bold mb-2 text-[16px] leading-6">
             Available roles ({isLoading ? "…" : jobs.length})
           </h3>
         </ScrollReveal>
@@ -104,12 +105,12 @@ export default function CareersPageClient() {
                   delay={index * 80}
                   className="grid md:grid-cols-2 items-center bg-[#F8F9FA] p-8 lg:px-10 lg:py-6 rounded-lg border border-gray-100 hover:shadow-sm transition-shadow"
                 >
-                  <div className="w-full font-bold text-[#1a1a1a] mb-2 md:mb-0 text-[16px]">
+                  <div className="w-full font-bold text-[#1a1a1a] mb-2 md:mb-0 text-[16px] leading-6">
                     {job.title}
                   </div>
 
                   <div className="w-full flex justify-between items-center ">
-                    <div className="w-full font-medium text-gray-700 text-[16px]">
+                    <div className="w-full font-normal text-black text-[16px] leading-6">
                       {job.type}
                     </div>
 
@@ -120,6 +121,7 @@ export default function CareersPageClient() {
                       }
                       variant="secondary"
                       size="sm"
+                      className="text-[14px] font-medium leading-5"
                     >
                       Apply
                     </Button>
@@ -211,11 +213,11 @@ export default function CareersPageClient() {
       <section className="relative pt-16 pb-0 px-6 lg:px-12 overflow-hidden">
         <div className="max-w-7xl mx-auto text-center">
           <ScrollReveal>
-            <h2 className="text-[28px] lg:text-[32px] font-black text-brand-primary mb-4 md:mb-6">
+            <h2 className="text-[28px] lg:text-[32px] font-black leading-10 text-brand-primary mb-4 md:mb-6">
               Join Our Talent Pool!
             </h2>
 
-            <p className="text-brand-primary text-[13px] md:text-[14px] max-w-200 mx-auto mb-10 font-bold px-4 md:px-0">
+            <p className="text-brand-primary text-[14px] leading-[26px] max-w-200 mx-auto mb-10 font-bold px-4 md:px-0">
               Don’t see a role that matches your skills? We’d still love to hear
               from you. Submit your CV to our talent pool, and we’ll contact you
               if a suitable opportunity becomes available.
@@ -226,7 +228,7 @@ export default function CareersPageClient() {
               onClick={() => dispatch(openCVModal())}
               variant="default"
               size="lg"
-              className="mb-10"
+              className="mb-10 text-[14px] font-medium leading-5"
             >
               Submit CV
             </Button>

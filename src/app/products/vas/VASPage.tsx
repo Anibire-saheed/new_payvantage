@@ -1,197 +1,102 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
-import ScrollReveal from "@/components/ui/ScrollReveal";
-import CtaImage from "@/components/ui/ctaImage";
-import { Button } from "@/components/ui/button";
+import { useRef } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
+import LivelinessPage from "../liveliness/LivelinessPage";
+import AddressVerificationPage from "../address-verification/AddressVerificationPage";
+import GamificationPage from "../gamification/GamificationPage";
+
+const services = [
+  { name: "Liveliness", slug: "liveliness", component: LivelinessPage },
+  { name: "Address Verification", slug: "address-verification", component: AddressVerificationPage },
+  { name: "Gamification", slug: "gamification", component: GamificationPage },
+];
 
 export default function VASPage() {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const activeIndex = Math.max(0, services.findIndex(service => service.slug === searchParams.get("service")));
+  const setActiveIndex = (index: number) => {
+    const params = new URLSearchParams(searchParams.toString());
+    params.set("service", services[index].slug);
+    router.replace(`/products/vas?${params.toString()}`, { scroll: false });
+  };
+  const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
+  const service = services[activeIndex];
+  const ServicePage = service.component;
 
   return (
-    <main className="flex min-h-screen flex-col bg-white overflow-hidden">
-      {/* Back Button */}
-      <div className="px-6 lg:px-12 max-w-7xl mx-auto w-full pt-4">
-        <Button
-          variant="ghost"
-          size="sm"
-          onClick={() => router.back()}
-          className="text-gray-600 font-medium hover:text-[#5153A0] hover:bg-transparent p-0"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="m15 18-6-6 6-6" />
-          </svg>
-          Back
-        </Button>
+    <main className="overflow-hidden bg-white font-sans text-[14px] leading-6 text-black">
+      <div
+        className="relative mx-1 mt-1 aspect-[1430/500] overflow-hidden rounded-lg"
+        aria-hidden="true"
+      >
+        <Image
+          src="/image/products/vas-banner.webp"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
       </div>
 
-      {/* Hero Section */}
-      <section className="pt-4 md:pt-6 lg:pt-8 pb-10 px-6 lg:px-12 max-w-7xl mx-auto w-full flex flex-col lg:flex-row items-center xl:justify-center gap-8 mb-8 md:mb-12 lg:mb-16">
-        <ScrollReveal from="left" className="w-full lg:w-1/2 text-left">
-          <span className="inline-block bg-[#5153A0] text-white px-6 py-3 border-b-[5px] border-gray-300 rounded-full text-[12px] font-bold mb-4">
-            VAS - Value Added Services
-          </span>
-          <h1 className="text-3xl md:text-[40px] lg:text-[40px] font-extrabold text-brand-primary leading-10 md:leading-13 mb-4">
-            Drive Customer Adoption & Usage
-          </h1>
-          <p className="text-gray-600 font-medium text-[15px] mb-6 max-w-130 leading-relaxed">
-            Value is key to driving customer adoption and usage with our value
-            added services.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center gap-4">
-            <Button
-              asChild
-              variant="default"
-              size="lg"
-              className="w-full sm:w-auto"
-            >
-              <Link href="/book-demo?product=VAS%20-%20Value%20Added%20Services">
-                Book A Demo
-              </Link>
-            </Button>
-            <Button
-              asChild
-              variant="secondary"
-              size="lg"
-              className="w-full sm:w-auto text-center"
-            >
-              <Link href="/contact-sales">Contact Sales</Link>
-            </Button>
-          </div>
-        </ScrollReveal>
-
-        <ScrollReveal
-          from="right"
-          delay={150}
-          className="w-full lg:w-1/2 mt-4 lg:mt-5"
+      <section
+        className="pt-8"
+        aria-label="Value Added Services"
+      >
+        <div className="mx-auto w-[min(1240px,calc(100%-48px))]">
+        <div
+          role="tablist"
+          aria-label="Value added services"
+          className="inline-flex max-w-full flex-nowrap gap-1 overflow-x-auto rounded-md bg-[#f7f7fb] p-1 max-sm:flex max-sm:w-full max-sm:gap-0.5"
         >
-          <div className="rounded-xl w-full h-55 sm:h-70 md:h-87.5 relative overflow-hidden mix-blend-multiply">
-            <Image
-              src="/image/products/product_4.svg"
-              alt="VAS - Value Added Services"
-              fill
-              className="object-contain object-center"
-              priority
-            />
-          </div>
-        </ScrollReveal>
-      </section>
-
-      {/* Details Section */}
-      <section className="px-6 lg:px-12 max-w-7xl mx-auto w-full">
-        <ScrollReveal className="mb-6">
-          <h2 className="max-w-xl text-2xl md:text-[28px] lg:text-[40px] font-extrabold text-brand-primary mb-3">
-            How It Works
-          </h2>
-          <p className="text-gray-600 font-medium text-[15px] max-w-xl">
-            Discover how VAS (Value Added Services) can transform your business
-            operations.
-          </p>
-        </ScrollReveal>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {[
-            {
-              number: "01",
-              title: "Easy Integration",
-              description:
-                "Seamlessly integrate our solution into your existing systems with minimal effort.",
-              icon: "/icons/support/integratn.svg",
-            },
-            {
-              number: "02",
-              title: "Scalable Infrastructure",
-              description:
-                "Built to handle millions of transactions with reliable performance.",
-              icon: "/icons/support/scalable-infra.svg",
-            },
-            {
-              number: "03",
-              title: "24/7 Support",
-              description:
-                "Dedicated support team available around the clock to assist you.",
-              icon: "/icons/support/support.svg",
-            },
-          ].map((item, index) => (
-            <ScrollReveal
-              key={item.number}
-              from={index % 2 === 0 ? "left" : "right"}
-              delay={index * 100}
-              className="flex"
+          {services.map((item, index) => (
+            <button
+              key={item.slug}
+              ref={(element) => {
+                tabRefs.current[index] = element;
+              }}
+              id={`vas-tab-${item.slug}`}
+              role="tab"
+              type="button"
+              aria-selected={activeIndex === index}
+              aria-controls={`vas-panel-${item.slug}`}
+              tabIndex={activeIndex === index ? 0 : -1}
+              onClick={() => setActiveIndex(index)}
+              onKeyDown={(event) => {
+                let next = index;
+                if (event.key === "ArrowRight")
+                  next = (index + 1) % services.length;
+                else if (event.key === "ArrowLeft")
+                  next = (index + services.length - 1) % services.length;
+                else if (event.key === "Home") next = 0;
+                else if (event.key === "End") next = services.length - 1;
+                else return;
+                event.preventDefault();
+                setActiveIndex(next);
+                tabRefs.current[next]?.focus();
+              }}
+              className={`shrink-0 whitespace-nowrap rounded px-4 py-3 text-[14px] font-medium max-sm:flex-1 max-sm:px-1.5 max-sm:text-[11px] max-[360px]:px-1 max-[360px]:text-[10px] text-[#5153a0] transition-colors focus-visible:outline-2 focus-visible:outline-[#5153a0] ${activeIndex === index ? "bg-[#eeeef5]" : "hover:bg-[#eeeef5]/60"}`}
             >
-              <div className="bg-[#EFF0F6] p-8 rounded-2xl border-b-4 border-gray-200 flex flex-col items-start text-left relative overflow-hidden flex-1">
-                {/* Top section with icon and number */}
-                <div className="flex justify-between items-center w-full mb-6 relative z-10">
-                  {/* Placeholder for small icon */}
-                  <div className="w-16 h-16 bg-gray-300 rounded-xl flex-shrink-0 flex items-center justify-center overflow-hidden">
-                    <Image
-                      src={item.icon}
-                      alt={item.title}
-                      width={24}
-                      height={24}
-                      className="w-6 h-6 object-contain [filter:invert(32%)_sepia(35%)_saturate(1175%)_hue-rotate(203deg)_brightness(94%)_contrast(91%)]"
-                    />
-                  </div>
-
-                  {/* Number badge (top right) */}
-                  <span className="text-[64px] font-extrabold text-gray-300 leading-none">
-                    {item.number}
-                  </span>
-                </div>
-
-                <h3 className="text-[#5153A0] font-bold text-lg mb-3 relative z-10">
-                  {item.title}
-                </h3>
-                <p className="text-gray-500 text-[14px] font-medium leading-relaxed relative z-10 flex-1">
-                  {item.description}
-                </p>
-              </div>
-            </ScrollReveal>
+              {item.name}
+            </button>
           ))}
         </div>
-      </section>
 
-      {/* CTA Section */}
-      <section className="mt-22">
-        <div className="relative pt-16 px-6 lg:pb-0 bg-linear-to-b from-[#3E409533] to-white overflow-hidden">
-          <div className="max-w-7xl mx-auto text-center ">
-            <ScrollReveal>
-              <div className="mb-4">
-                <span className="inline-block bg-[#5153A0] text-white px-6 py-3 border-b-5 border-gray-300 rounded-full text-[12px] font-bold">
-                  Get Started
-                </span>
-              </div>
-
-              <h2 className="text-2xl md:text-[28px] lg:text-[32px] font-extrabold text-brand-primary mb-3 md:mb-4">
-                Turn every transaction into a reason to come back.
-              </h2>
-
-              <p className="text-black text-[13px] md:text-[14px] max-w-md mx-auto mb-6 font-bold px-4 md:px-0">
-                Add Payvantage VAS to your platform and give your customers
-                airtime, data, and bill payments.
-              </p>
-
-              <Button asChild variant="default" size="lg" className="mb-8">
-                <Link href="/book-demo?product=VAS%20-%20Value%20Added%20Services">
-                  Book Your Demo
-                </Link>
-              </Button>
-            </ScrollReveal>
-          </div>
         </div>
-        <CtaImage />
+
+        <div
+          key={service.slug}
+          role="tabpanel"
+          id={`vas-panel-${service.slug}`}
+          aria-labelledby={`vas-tab-${service.slug}`}
+          tabIndex={0}
+          className="mt-8 focus-visible:outline-2 focus-visible:outline-[#5153a0]"
+        >
+          <ServicePage embedded />
+        </div>
       </section>
     </main>
   );

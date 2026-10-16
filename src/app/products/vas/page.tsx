@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import VASPage from "./VASPage";
 import type { Metadata } from "next";
 
@@ -6,5 +7,9 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <VASPage />;
+  return (
+    <Suspense fallback={<main className="min-h-screen" aria-busy="true" aria-label="Loading value added services" />} >
+      <VASPage />
+    </Suspense>
+  );
 }
