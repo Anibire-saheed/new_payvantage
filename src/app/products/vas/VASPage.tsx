@@ -38,11 +38,11 @@ export default function VASPage() {
   return (
     <main className="overflow-hidden bg-white font-sans text-[14px] leading-6 text-black">
       <section
-        className="relative mx-1 mt-1 flex min-h-[360px] items-center justify-center overflow-hidden rounded-lg px-4 py-10 text-center text-white sm:px-6 sm:py-12 lg:aspect-[1430/500] lg:py-16"
+        className="relative mx-1 mt-1 flex min-h-[480px] sm:min-h-[360px] items-center justify-center overflow-hidden rounded-lg px-4 py-10 text-center text-white sm:px-6 sm:py-12 lg:aspect-[1430/500] lg:py-16"
         aria-labelledby="vas-heading"
       >
         <Image
-          src="/image/products/vas-banner.webp"
+          src="/image/products/vas-banner.svg"
           alt=""
           fill
           priority

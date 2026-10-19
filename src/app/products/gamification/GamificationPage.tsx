@@ -15,8 +15,8 @@ export default function GamificationPage({ embedded=false }: { embedded?: boolea
       {!embedded&&<ProductBackButton />}
 
       {/* Hero Section */}
-      <ProductHero label={<>Gamification</>} title={<>Increase Engagement & Retention</>}
-        image="/image/products/product_2.svg" imageAlt="Gamification" featuresId="gamification-features" demoHref="/book-demo?product=Gamification"
+      <ProductHero largeImage label={<>Gamification</>} title={<>Increase Engagement & Retention</>}
+        image="/image/landing/gamification.svg" imageAlt="A rewards challenge with stars, points and a leaderboard." featuresId="gamification-features" demoHref="/book-demo?product=Gamification"
         className="pt-8 md:pt-12 lg:pt-16 pb-10 px-6 lg:px-12 max-w-7xl mx-auto w-full flex flex-col lg:flex-row items-center xl:justify-center gap-8 mb-8 md:mb-12 lg:mb-16" descriptionClassName="text-gray-600 mb-6 max-w-130 text-[14px] font-medium leading-6">
         Increase engagement and retention with rewards, challenges, badges,
         and leaderboards.

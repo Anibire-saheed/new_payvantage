@@ -4,9 +4,9 @@ import { Badge } from "@/components/home/landingShared";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import ProductActions from "./ProductActions";
 
-export default function ProductHero({ label,title,children,image,imageAlt,featuresId,demoHref,className,descriptionClassName }: {
+export default function ProductHero({ label,title,children,image,imageAlt,featuresId,demoHref,className,descriptionClassName,largeImage = false }: {
   label: ReactNode; title: ReactNode; children: ReactNode; image: string; imageAlt: string;
-  featuresId: string; demoHref: string; className: string; descriptionClassName: string;
+  featuresId: string; demoHref: string; className: string; descriptionClassName: string; largeImage?: boolean;
 }) {
   return (
     <section className={className}>
@@ -22,11 +22,12 @@ export default function ProductHero({ label,title,children,image,imageAlt,featur
         delay={150}
         className="w-full lg:w-1/2 mt-4 lg:mt-5"
       >
-        <div className="rounded-xl w-full h-55 sm:h-70 md:h-87.5 relative overflow-hidden mix-blend-multiply">
+        <div className={`rounded-xl w-full aspect-[500/482] lg:aspect-auto relative overflow-hidden mix-blend-multiply ${largeImage ? "lg:h-[480px]" : "lg:h-87.5"}`}>
           <Image
             src={image}
             alt={imageAlt}
             fill
+            sizes="(max-width: 1023px) calc(100vw - 48px), (max-width: 1279px) calc(50vw - 64px), 576px"
             className="object-contain object-center"
             priority
           />

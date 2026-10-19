@@ -4,7 +4,7 @@ export const docsUrl = "https://payvantage.gitbook.io/payvantage.gitbook.io";
 export const asset = (name: string) => {
   const filename = /\.[^/.]+$/.test(name)
     ? name
-    : `${name}.${name === "logo" ? "svg" : "webp"}`;
+    : `${name}.svg`;
 
   return `/image/landing/${filename}`;
 };

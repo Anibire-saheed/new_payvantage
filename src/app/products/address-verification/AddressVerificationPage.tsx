@@ -15,8 +15,8 @@ export default function AddressVerificationPage({ embedded=false }: { embedded?:
       {!embedded&&<ProductBackButton />}
 
       {/* Hero Section */}
-      <ProductHero label={<>Address Verification</>} title={<>Confirm Customer Addresses Quickly & Accurately</>}
-        image="/image/products/product_1.svg" imageAlt="Address Verification" featuresId="address-verification-features" demoHref="/book-demo?product=Address%20Verification"
+      <ProductHero largeImage label={<>Address Verification</>} title={<>Confirm Customer Addresses Quickly & Accurately</>}
+        image="/image/landing/address_verification.svg" imageAlt="A map and a successfully verified customer address." featuresId="address-verification-features" demoHref="/book-demo?product=Address%20Verification"
         className="pt-4 md:pt-6 lg:pt-8 pb-10 px-6 lg:px-12 max-w-7xl mx-auto w-full flex flex-col lg:flex-row items-center xl:justify-center gap-8 mb-8 md:mb-12 lg:mb-16" descriptionClassName="text-gray-600 mb-6 max-w-130 text-[14px] font-medium leading-6">
         Confirm customer addresses quickly and accurately to reduce fraud
         and streamline onboarding.

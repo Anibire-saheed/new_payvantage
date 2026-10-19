@@ -17,7 +17,7 @@ export default function VirtualAccountsPage() {
       <ProductHero label={<>Virtual Account</>} title={<>Banking-as-a-Service,
         <br />
         Plug and Play</>}
-        image="/image/products/product_6.svg" imageAlt="Virtual Accounts" featuresId="virtual-accounts-features" demoHref="/book-demo?product=Virtual%20Accounts"
+        image="/image/landing/virtual-account.svg" imageAlt="Virtual account showing a received payment and settled invoices." featuresId="virtual-accounts-features" demoHref="/book-demo?product=Virtual%20Accounts"
         className="pt-4 md:pt-6 lg:pt-8 pb-10 px-6 lg:px-12 max-w-7xl mx-auto w-full flex flex-col lg:flex-row items-center xl:justify-center gap-8 mb-8 md:mb-12 lg:mb-16" descriptionClassName="text-gray-600 mb-6 max-w-230 text-[14px] font-medium leading-6">
         A plug-and-play Bank-as-a-Service solution that powers automated
         payment collections, real-time webhooks, auto-split settlements, and

@@ -4,7 +4,7 @@ import { Badge } from "./landingShared";
 
 export default function Hero() {
   return (
-    <div className="h-auto bg-[#3e4095] bg-[url('/image/landing/hero-background.webp')] bg-cover bg-top bg-no-repeat text-white lg:h-[652px] max-md:bg-size-[auto_100%]">
+    <div className="h-auto bg-[#3e4095] bg-[url('/image/landing/hero-background.svg')] bg-cover bg-top bg-no-repeat text-white lg:h-[652px] max-md:bg-size-[auto_100%]">
       <LandingHeader />
       <section
         className="px-6 pt-[65px] text-center [&>span]:h-[45px] [&>span]:px-5 [&>span_span]:text-[17px] [&>h1]:mx-auto [&>h1]:mt-9 [&>h1]:text-[40px] [&>h1]:font-semibold [&>h1]:leading-[42px] [&>h1]:text-white [&>p]:mx-auto [&>p]:mt-5 [&>p]:text-[16px] [&>p]:leading-6 [&>p]:text-[#d2d3e6] max-lg:pb-[100px] max-md:pt-[52px] max-md:pb-20 max-md:[&>h1]:max-w-[560px] max-md:[&>h1]:mt-8 max-md:[&>h1]:leading-10 max-md:[&>p]:max-w-[480px] max-md:[&>p]:mt-6 max-[23.75rem]:[&>span]:px-3 max-[23.75rem]:[&>span]:text-[11px]"
