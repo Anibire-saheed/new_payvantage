@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { asset } from "./landingShared";
-import styles from "./Partners.module.css";
 
 const partners = [
   { name: "Creditswitch", src: asset("creditswitch"), width: 145 },
@@ -22,12 +21,12 @@ export default function Partners() {
       <h2 className="text-[26px] font-bold leading-9 text-[#3e4095] max-md:text-[24px] max-md:leading-8" id="partners-heading">
         Partners Who Trust Us
       </h2>
-      <div className={`${styles.viewport} mt-[30px]`}>
-        <div className={styles.track}>
+      <div className="mt-[30px] h-24 overflow-hidden motion-reduce:overflow-x-auto">
+        <div className="flex w-max animate-[partners-scroll-logos_30s_linear_infinite] motion-reduce:animate-none">
           {[false, true].map(duplicate => (
-            <ul key={String(duplicate)} className={styles.group} aria-hidden={duplicate || undefined}>
+            <ul key={String(duplicate)} className="m-0 flex shrink-0 list-none items-center gap-10 py-0 pl-0 pr-10 max-md:gap-6 max-md:pr-6 motion-reduce:aria-hidden:hidden" aria-hidden={duplicate || undefined}>
               {partners.map(partner => (
-                <li key={partner.name} className="flex h-24 items-center justify-center px-3">
+                <li key={partner.name} className="flex h-24 shrink-0 items-center justify-center px-3">
                   <Image src={partner.src} alt={duplicate ? "" : partner.name} width={partner.width} height={60} className="h-[60px] max-w-full object-contain grayscale" />
                 </li>
               ))}
@@ -35,7 +34,11 @@ export default function Partners() {
           ))}
         </div>
       </div>
-
+      <style>{`
+        @keyframes partners-scroll-logos {
+          to { transform: translateX(-50%); }
+        }
+      `}</style>
     </section>
   );
 }

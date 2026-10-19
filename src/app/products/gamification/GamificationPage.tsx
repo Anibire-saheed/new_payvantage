@@ -40,18 +40,21 @@ export default function GamificationPage({ embedded=false }: { embedded?: boolea
               title: "Easy Integration",
               description:
                 "Seamlessly integrate our solution into your existing systems with minimal effort.",
+              icon: "/icons/gamification/easy-integration.svg",
             },
             {
               number: "02",
               title: "Scalable Infrastructure",
               description:
                 "Built to handle millions of transactions with reliable performance.",
+              icon: "/icons/gamification/scalable-infrastructure.svg",
             },
             {
               number: "03",
               title: "24/7 Support",
               description:
                 "Dedicated support team available around the clock to assist you.",
+              icon: "/icons/gamification/dedicated-support.svg",
             },
           ]} />
         </div>
