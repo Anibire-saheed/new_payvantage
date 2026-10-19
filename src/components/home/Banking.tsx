@@ -25,7 +25,7 @@ export default function Banking() {
       </p>
       <Image
         className="mx-auto mt-[51px] block h-auto w-full max-w-[1240px] rounded-[20px] max-md:mt-10 max-md:rounded-xl"
-        src={asset("ethcore_image.png")}
+        src={asset("ethcore_image.svg")}
         alt="The Ethica core banking dashboard built by Payvantage, with transaction reporting, customer statements and account management."
         width={1240}
         height={546}

@@ -14,11 +14,11 @@ export default function ProductFeatures({ items }: { items: ProductFeature[]; })
       key={item.number}
       from={index%2===0? "left":"right"}
       delay={index*100}
-      className="flex"
+      className="flex min-w-0"
     >
-      <div className="bg-[#EFF0F6] p-8 rounded-2xl border-b-4 border-gray-200 flex flex-col items-start text-left relative overflow-hidden flex-1">
+      <div className="bg-[#EFF0F6] min-w-0 w-full p-6 lg:p-8 rounded-2xl border-b-4 border-gray-200 flex flex-col items-start text-left break-words relative overflow-hidden flex-1">
         {/* Top section with icon and number */}
-        <div className="flex justify-between items-center w-full mb-6 relative z-10">
+        <div className="flex justify-between gap-4 items-center w-full mb-6 relative z-10">
           <div className="w-16 h-16 bg-gray-300 rounded-xl flex-shrink-0 flex items-center justify-center overflow-hidden">
             {item.icon&&<Image
               src={item.icon}
@@ -30,7 +30,7 @@ export default function ProductFeatures({ items }: { items: ProductFeature[]; })
           </div>
 
           {/* Number badge (top right) */}
-          <span className="text-[64px] font-extrabold text-gray-300 leading-none">
+          <span className="text-[52px] lg:text-[64px] shrink-0 font-extrabold text-gray-300 leading-none">
             {item.number}
           </span>
         </div>
