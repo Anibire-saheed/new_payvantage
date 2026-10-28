@@ -76,7 +76,7 @@ export default function ApplyPageClient() {
         <Button
           type="button"
           variant="ghost"
-          size="sm"
+          size="default"
           onClick={() => router.push("/careers")}
           className="text-[#5153A0] font-medium text-[14px] mb-8 p-0 hover:bg-transparent"
         >
