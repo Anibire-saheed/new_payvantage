@@ -36,16 +36,16 @@ export default function AboutPageClient() {
               type="button"
               onClick={handleReadOurStory}
               variant="default"
-              size="lg"
+              size="default"
               className="w-full sm:w-auto text-[14px] font-medium"
             >
               Read Our Story
-              <ChevronDownIcon className="w-5 h-5 ml-1 mt-2" />
+              <ChevronDownIcon className="w-1 h-1 -mt-2" />
             </Button>
             <Button
               asChild
               variant="secondary"
-              size="lg"
+              size="default"
               className="w-full sm:w-auto text-center text-[14px] font-medium"
             >
               <Link href="/book-demo">Book A Demo</Link>
@@ -247,7 +247,7 @@ export default function AboutPageClient() {
               <br className="hidden md:block" /> suite of payment solutions.
             </p>
 
-            <Button asChild variant="default" size="lg" className="mb-8">
+            <Button asChild variant="default" size="default" className="mb-8">
               <Link href="/book-demo">BOOK A DEMO</Link>
             </Button>
           </ScrollReveal>

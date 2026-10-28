@@ -120,7 +120,7 @@ export default function CareersPageClient() {
                         router.push(`/careers/apply?jobId=${job.id}`)
                       }
                       variant="secondary"
-                      size="sm"
+                      size="default"
                       className="text-[14px] font-medium leading-5"
                     >
                       Apply
@@ -227,7 +227,7 @@ export default function CareersPageClient() {
               type="button"
               onClick={() => dispatch(openCVModal())}
               variant="default"
-              size="lg"
+              size="default"
               className="mb-10 text-[14px] font-medium leading-5"
             >
               Submit CV

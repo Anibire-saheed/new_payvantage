@@ -306,7 +306,7 @@ export default function ApplyPageClient() {
                     type="submit"
                     disabled={isSubmitting}
                     variant="default"
-                    size="lg"
+                    size="default"
                     className="w-full"
                   >
                     {isSubmitting ? "Submitting…" : "Submit Application"}

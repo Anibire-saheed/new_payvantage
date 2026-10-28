@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "@/components/layout/NavigationLink";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import { Button } from "@/components/ui/button";
 
 export interface ProductItem {
   name: string;
@@ -196,13 +197,15 @@ export default function ProductsDropdown({
           </div>
 
           <div>
-            <Link
-              href="/contact-sales"
+            <Button
+              type="button"
               onClick={onClose}
-              className="mt-[19px] inline-flex h-9 items-center justify-center px-5 bg-[#5153A0] hover:bg-[#3E4095] text-white text-[12px] leading-[18px] font-normal rounded-[5px] transition-colors"
+              variant="default"
+              size="default"
+              className="mt-[19px] inline-flex  items-center justify-center  bg-[#5153A0] hover:bg-[#3E4095] text-white text-[12px] leading-[18px] font-normal transition-colors"
             >
-              Book a call
-            </Link>
+              <Link href="/contact-sales">Book a call</Link>
+            </Button>
           </div>
         </div>
       </div>

@@ -6,6 +6,7 @@ import MobileNavigation from "@/components/layout/MobileNavigation";
 import { useRef, useState } from "react";
 import { asset, docsUrl } from "./landingShared";
 import ProductsDropdown from "@/components/layout/ProductsDropdown";
+import { Button } from "@/components/ui/button";
 
 export default function LandingHeader() {
   const [productsOpen, setProductsOpen] = useState(false);
@@ -67,18 +68,23 @@ export default function LandingHeader() {
             <Link href="/careers">Careers</Link>
           </nav>
           <div className="flex gap-3.5 [&>a]:min-h-[42px] [&>a]:px-5 [&>a]:text-[12px] [&>a]:font-semibold max-lg:flex-col max-lg:gap-3 max-lg:px-6 max-lg:pb-6 max-md:gap-2 max-md:[&>a]:min-h-9 max-md:[&>a]:px-2.5 max-md:[&>a]:text-[10px]">
-            <a
-              className="inline-flex min-h-[50px] items-center justify-center rounded-[5px] border border-white bg-[rgba(255,255,255,0.05)] px-5 text-[14px] font-semibold leading-5 whitespace-nowrap text-white"
-              href={docsUrl}
+            <Button
+              type="button"
+              variant="transparent"
+              size="default"
+              className="inline-flex min-h-[50px] items-center justify-center rounded-[5px] border border-white bg-[rgba(255,255,255,0.05)] text-[14px] font-semibold leading-5 whitespace-nowrap text-white hover:bg-[rgba(255,255,255,0.05)] hover:text-white active:scale-100"
             >
-              View API Docs
-            </a>
-            <Link
-              className="inline-flex min-h-[50px] items-center justify-center rounded-[5px] border border-transparent bg-white px-5 text-[14px] font-semibold leading-5 whitespace-nowrap text-[#3e4095]"
-              href="/contact-sales"
+              <a href={docsUrl}>View API Docs</a>
+            </Button>
+
+            <Button
+              type="button"
+              variant="transparent"
+              size="default"
+              className="inline-flex min-h-[50px] items-center justify-center rounded-[5px] border border-transparent bg-white text-[14px] font-semibold leading-5 whitespace-nowrap text-[#3e4095] hover:bg-white hover:text-[#3e4095] active:scale-100"
             >
-              Contact Sales
-            </Link>
+              <Link href="/contact-sales">Contact Sales</Link>
+            </Button>
           </div>
         </div>
       </div>

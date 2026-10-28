@@ -11,16 +11,12 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default:
-          "bg-brand-primary text-white hover:bg-brand-logo shadow-md",
-        brand:
-          "bg-[#5153A0] text-white hover:bg-[#5153A0]/90 shadow-md",
-        secondary:
-          "bg-[#5153A01A] text-[#5153A0] hover:bg-[#F4F5F9]",
+        default: "bg-brand-primary text-white hover:bg-brand-logo shadow-md",
+        brand: "bg-[#5153A0] text-white hover:bg-[#5153A0]/90 shadow-md",
+        secondary: "bg-[#5153A01A] text-[#5153A0] hover:bg-[#F4F5F9]",
         outline:
           "border border-gray-400 text-white bg-transparent hover:bg-white/10",
-        white:
-          "bg-white text-brand-logo hover:bg-gray-100 shadow-md",
+        white: "bg-white text-brand-logo hover:bg-gray-100 shadow-md",
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         ghost: "hover:bg-accent hover:text-accent-foreground",
@@ -28,10 +24,10 @@ const buttonVariants = cva(
         transparent: "text-black bg-transparent",
       },
       size: {
-        default: "h-11 px-6 py-2.5 text-sm",
-        sm: "h-9 rounded-md px-4 text-xs font-semibold",
-        lg: "h-13 rounded-lg px-8 text-sm md:text-base font-bold",
-        xl: "h-14 rounded-lg px-8 text-base font-bold",
+        default: "px-5 py-4 text-sm font-semibold rounded-sm ",
+        // sm: "h-9 rounded-md px-4 text-xs font-semibold",
+        // lg: "h-13 rounded-lg px-8 text-sm md:text-base font-bold",
+        // xl: "h-14 rounded-lg px-8 text-base font-bold",
         icon: "h-10 w-10 p-0 items-center justify-center",
       },
     },
