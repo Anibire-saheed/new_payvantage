@@ -272,7 +272,7 @@ export default function CVModal({ isOpen, onClose }: CVModalProps) {
                 type="button"
                 onClick={handleClose}
                 variant="default"
-                size="lg"
+                size="default"
               >
                 Close
               </Button>
@@ -659,7 +659,7 @@ export default function CVModal({ isOpen, onClose }: CVModalProps) {
                     type="submit"
                     disabled={isSubmitting}
                     variant="default"
-                    size="lg"
+                    size="default"
                     className="w-full"
                   >
                     {isSubmitting ? "Submitting..." : "Submit CV/Resume"}

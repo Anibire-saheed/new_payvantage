@@ -65,7 +65,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
               <Button
                 aria-label="toggle show password"
                 onClick={handleClick}
-                size="sm"
+                size="default"
                 type="button"
                 className="text-muted-foreground bg-transparent hover:bg-transparent"
               >

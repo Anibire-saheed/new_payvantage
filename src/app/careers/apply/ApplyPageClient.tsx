@@ -166,7 +166,7 @@ export default function ApplyPageClient() {
               type="button"
               onClick={() => router.push("/careers")}
               variant="default"
-              size="lg"
+              size="default"
             >
               Back to Careers
             </Button>
